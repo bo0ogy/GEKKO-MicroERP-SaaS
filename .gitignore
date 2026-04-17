@@ -1,0 +1,14 @@
+# --- Sécurité (Loi 09-08 & Protection des données) ---
+.env
+*.log
+config/secrets.json
+
+# --- Dépendances (Inutile à uploader) ---
+node_modules/
+dist/
+build/
+
+# --- Système & Design ---
+.DS_Store
+Thumbs.db
+*.fig.backup  # Si tu as des sauvegardes locales de tes maquettes Figma
