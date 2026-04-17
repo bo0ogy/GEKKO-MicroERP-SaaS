@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="fr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>GEKKO Entreprise - Inscription initiale</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;400;700;800&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-surface-variant": "#adaaab",
+                        "primary-dim": "#6063ee",
+                        "on-secondary-fixed": "#4f0089",
+                        "tertiary-dim": "#5bf083",
+                        "on-secondary-fixed-variant": "#7511c3",
+                        "on-error-container": "#ffb2b9",
+                        "surface-container-low": "#131314",
+                        "on-error": "#490013",
+                        "secondary": "#c180ff",
+                        "inverse-primary": "#494bd7",
+                        "on-tertiary": "#00692c",
+                        "outline-variant": "#484849",
+                        "on-surface": "#ffffff",
+                        "on-primary-container": "#0a0081",
+                        "surface-tint": "#a3a6ff",
+                        "primary": "#a3a6ff",
+                        "surface": "#0e0e0f",
+                        "on-background": "#ffffff",
+                        "on-primary-fixed-variant": "#0e009d",
+                        "tertiary-fixed-dim": "#5bf083",
+                        "surface-container": "#1a191b",
+                        "secondary-fixed-dim": "#dbb4ff",
+                        "surface-variant": "#262627",
+                        "primary-fixed": "#9396ff",
+                        "inverse-surface": "#fcf8f9",
+                        "on-primary-fixed": "#000000",
+                        "error": "#ff6e84",
+                        "error-container": "#a70138",
+                        "surface-container-lowest": "#000000",
+                        "surface-container-high": "#201f21",
+                        "primary-container": "#9396ff",
+                        "outline": "#767576",
+                        "error-dim": "#d73357",
+                        "on-tertiary-fixed": "#004a1d",
+                        "background": "#0e0e0f",
+                        "secondary-container": "#6f00be",
+                        "secondary-dim": "#9c48ea",
+                        "primary-fixed-dim": "#8387ff",
+                        "on-secondary-container": "#e9cdff",
+                        "tertiary-fixed": "#6bff8f",
+                        "inverse-on-surface": "#565556",
+                        "tertiary": "#c5ffc9",
+                        "on-tertiary-fixed-variant": "#006a2d",
+                        "surface-bright": "#2c2c2d",
+                        "surface-dim": "#0e0e0f",
+                        "on-tertiary-container": "#005f28",
+                        "tertiary-container": "#6bff8f",
+                        "surface-container-highest": "#262627",
+                        "secondary-fixed": "#e5c6ff",
+                        "on-secondary": "#33005b",
+                        "on-primary": "#0f00a4"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Manrope"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .glass-panel {
+            background: rgba(38, 38, 39, 0.6);
+            backdrop-filter: blur(20px);
+        }
+        .primary-gradient {
+            background: linear-gradient(135deg, #a3a6ff 0%, #c180ff 100%);
+        }
+        .subtle-glow {
+            box-shadow: 0 0 40px -10px rgba(163, 166, 255, 0.15);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body min-h-screen flex flex-col selection:bg-primary/30">
+<!-- Top Navigation (Shell Invisible for Transactional Flow) -->
+<header class="fixed top-0 w-full z-50 flex justify-center items-center h-24">
+<div class="flex items-center gap-3">
+<img alt="GEKKO Logo" class="h-10 w-auto" data-alt="Geometric minimalist logo for GEKKO brand, featuring sleek abstract lines in a futuristic monochrome style on a transparent background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBBIcTj2lSAnxjjnqeG-tdOhOcm1lZQW9oABddbNXpTVmqx5_MXteJJfAW5NzM4-UTiN2Px0ibhpwQroQUAU53ds6KlrXRXoZLejDStMGoPUtujWg1VUbSdFP8O4iI4YdszzyLffUKxg8OtEXx652m6LHwjq77l8IUAcsqhftTsRy-NeUNXAtSu4qW2xbd8-EmRZoHKqwPwwCOOQ98e9Ldv8hSdOsrGFz1YUIFxtA4Rhpa2LseiYn9W_cP1jfMujuowQxIqfICoIERz"/>
+<span class="font-headline font-black tracking-tighter text-2xl">GEKKO</span>
+</div>
+</header>
+<main class="flex-grow flex items-center justify-center px-6 pt-24 pb-12">
+<!-- Registration Card Container -->
+<div class="w-full max-w-[480px]">
+<div class="text-center mb-8">
+<h1 class="font-headline text-3xl md:text-4xl font-bold tracking-tight mb-3">Commencez votre aventure</h1>
+<p class="text-on-surface-variant text-base">ERP moderne pour les micro-entreprises marocaines.</p>
+</div>
+<!-- Bento Card -->
+<div class="surface-container-low rounded-xl p-8 subtle-glow relative overflow-hidden group">
+<!-- Recessed decorative element -->
+<div class="absolute -top-24 -right-24 w-48 h-48 bg-primary/5 rounded-full blur-3xl"></div>
+<form class="space-y-6 relative z-10">
+<!-- Input Section -->
+<div class="space-y-2">
+<label class="font-label text-[0.6875rem] font-medium tracking-wider uppercase text-on-surface-variant px-1" for="email">Adresse email professionnelle</label>
+<div class="relative">
+<div class="absolute inset-y-0 left-4 flex items-center pointer-events-none text-outline">
+<span class="material-symbols-outlined text-[20px]" data-icon="mail">mail</span>
+</div>
+<input class="w-full h-14 pl-12 bg-surface-container-highest border-none rounded-lg text-on-surface placeholder:text-outline focus:ring-1 focus:ring-primary-dim transition-all duration-300" id="email" placeholder="nom@entreprise.ma" required="" type="email"/>
+</div>
+</div>
+<!-- Action Button -->
+<button class="w-full h-14 primary-gradient text-on-primary-fixed font-bold rounded-lg hover:opacity-90 active:scale-[0.98] transition-all duration-200 shadow-lg shadow-primary/10" type="submit">
+                Commencer
+            </button>
+<!-- Legal Check -->
+<div class="flex items-start gap-3 px-1">
+<div class="pt-0.5">
+<input class="w-4 h-4 rounded border-outline-variant bg-surface-container-highest text-primary-dim focus:ring-0 cursor-pointer" id="terms" type="checkbox"/>
+</div>
+<label class="text-xs text-on-surface-variant leading-relaxed cursor-pointer" for="terms">
+                    J'accepte les <a class="text-primary hover:underline transition-colors" href="#">Conditions d'utilisation</a> et la <a class="text-primary hover:underline transition-colors" href="#">Politique de confidentialité</a>
+</label>
+</div>
+</form>
+</div>
+<!-- Contextual Navigation / Switch -->
+<div class="mt-8 text-center">
+<p class="text-sm text-on-surface-variant">
+            Déjà un compte ? <a class="text-secondary font-semibold hover:opacity-80 transition-opacity" href="#">Se connecter</a>
+</p>
+</div>
+</div>
+</main>
+<!-- Success/Legal Footer -->
+<footer class="w-full border-t border-white/5 py-8 px-10">
+<div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+<div class="flex items-center gap-6">
+<!-- Secured Connection Badge -->
+<div class="flex items-center gap-2 px-3 py-1.5 rounded-full bg-surface-container-high border border-outline-variant/10">
+<span class="material-symbols-outlined text-[16px] text-tertiary" data-icon="lock" data-weight="fill">lock</span>
+<span class="font-label text-[0.6875rem] font-medium tracking-wider uppercase text-on-surface-variant">Connexion sécurisée</span>
+</div>
+<!-- Validation Badge -->
+<div class="flex items-center gap-2 px-3 py-1.5 rounded-full bg-surface-container-high border border-outline-variant/10">
+<span class="material-symbols-outlined text-[16px] text-tertiary" data-icon="verified_user">verified_user</span>
+<span class="font-label text-[0.6875rem] font-medium tracking-wider uppercase text-on-surface-variant">Validé par la DGI 2026</span>
+</div>
+</div>
+<div class="flex flex-col md:flex-row items-center gap-8">
+<div class="flex gap-6">
+<a class="font-label text-[0.6875rem] font-medium tracking-wider uppercase text-white/40 hover:text-[#a3a6ff] transition-colors" href="#">Conditions d'utilisation</a>
+<a class="font-label text-[0.6875rem] font-medium tracking-wider uppercase text-white/40 hover:text-[#a3a6ff] transition-colors" href="#">Confidentialité</a>
+<a class="font-label text-[0.6875rem] font-medium tracking-wider uppercase text-white/40 hover:text-[#a3a6ff] transition-colors" href="#">Support client</a>
+</div>
+<span class="font-label text-[0.6875rem] font-medium tracking-wider uppercase text-white/40">© 2024 GEKKO Entreprise. Tous droits réservés.</span>
+</div>
+</div>
+</footer>
+<!-- Background Gradient Glows -->
+<div class="fixed top-0 left-0 w-full h-full pointer-events-none -z-10 overflow-hidden">
+<div class="absolute -top-[10%] -left-[5%] w-[40%] h-[40%] bg-primary/5 rounded-full blur-[120px]"></div>
+<div class="absolute bottom-[0%] right-[0%] w-[30%] h-[30%] bg-secondary/5 rounded-full blur-[100px]"></div>
+</div>
+</body></html>

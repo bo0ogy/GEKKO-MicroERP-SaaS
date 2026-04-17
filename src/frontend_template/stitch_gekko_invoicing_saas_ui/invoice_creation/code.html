@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>GEKKO - New Invoice</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Manrope:wght@700;800&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-secondary-fixed-variant": "#7511c3",
+                    "inverse-on-surface": "#565556",
+                    "on-background": "#ffffff",
+                    "on-primary": "#0f00a4",
+                    "on-surface-variant": "#adaaab",
+                    "primary": "#a3a6ff",
+                    "secondary-fixed": "#e5c6ff",
+                    "secondary-container": "#6f00be",
+                    "background": "#0e0e0f",
+                    "on-secondary-fixed": "#4f0089",
+                    "on-tertiary-fixed": "#004a1d",
+                    "on-secondary-container": "#e9cdff",
+                    "surface-container-high": "#201f21",
+                    "outline-variant": "#484849",
+                    "error": "#ff6e84",
+                    "surface-container-highest": "#262627",
+                    "tertiary-container": "#6bff8f",
+                    "surface-tint": "#a3a6ff",
+                    "on-secondary": "#33005b",
+                    "primary-fixed-dim": "#8387ff",
+                    "tertiary": "#c5ffc9",
+                    "primary-dim": "#6063ee",
+                    "on-error-container": "#ffb2b9",
+                    "surface-dim": "#0e0e0f",
+                    "secondary-dim": "#9c48ea",
+                    "on-error": "#490013",
+                    "inverse-surface": "#fcf8f9",
+                    "error-container": "#a70138",
+                    "on-tertiary": "#00692c",
+                    "on-primary-fixed": "#000000",
+                    "tertiary-fixed-dim": "#5bf083",
+                    "secondary-fixed-dim": "#dbb4ff",
+                    "surface-container": "#1a191b",
+                    "surface-bright": "#2c2c2d",
+                    "surface-variant": "#262627",
+                    "surface-container-low": "#131314",
+                    "surface-container-lowest": "#000000",
+                    "inverse-primary": "#494bd7",
+                    "on-primary-fixed-variant": "#0e009d",
+                    "primary-fixed": "#9396ff",
+                    "tertiary-dim": "#5bf083",
+                    "outline": "#767576",
+                    "on-surface": "#ffffff",
+                    "error-dim": "#d73357",
+                    "primary-container": "#9396ff",
+                    "on-primary-container": "#0a0081",
+                    "surface": "#0e0e0f",
+                    "on-tertiary-fixed-variant": "#006a2d",
+                    "tertiary-fixed": "#6bff8f",
+                    "on-tertiary-container": "#005f28",
+                    "secondary": "#c180ff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Manrope"],
+                    "body": ["Inter"],
+                    "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3 { font-family: 'Manrope', sans-serif; }
+    </style>
+</head>
+<body class="bg-background text-on-surface antialiased flex overflow-hidden">
+<!-- SideNavBar Component -->
+<aside class="hidden md:flex flex-col h-screen w-64 border-r border-white/5 bg-[#0e0e0f] font-['Inter'] text-sm">
+<div class="flex flex-col h-full py-8">
+<div class="px-6 mb-12">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-gradient-to-br from-primary to-secondary flex items-center justify-center">
+<span class="material-symbols-outlined text-on-primary-fixed" style="font-variation-settings: 'FILL' 1;">account_balance</span>
+</div>
+<div>
+<h1 class="font-['Manrope'] font-black tracking-tighter text-2xl leading-none">GEKKO</h1>
+<p class="text-[10px] uppercase tracking-widest text-zinc-500">Micro-ERP</p>
+</div>
+</div>
+</div>
+<nav class="flex-1 px-4 space-y-1">
+<a class="flex items-center gap-3 px-4 py-3 text-zinc-500 hover:text-zinc-300 hover:bg-white/5 transition-all duration-200 rounded-lg group" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span>Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-indigo-400 bg-indigo-500/10 border-r-2 border-indigo-500 transition-all duration-200 rounded-lg group" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">receipt_long</span>
+<span class="font-bold">Invoices</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-zinc-500 hover:text-zinc-300 hover:bg-white/5 transition-all duration-200 rounded-lg group" href="#">
+<span class="material-symbols-outlined">group</span>
+<span>Clients</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-zinc-500 hover:text-zinc-300 hover:bg-white/5 transition-all duration-200 rounded-lg group" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span>Settings</span>
+</a>
+</nav>
+<div class="mt-auto px-4 space-y-4">
+<div class="p-4 bg-surface-container rounded-xl border border-white/5">
+<p class="text-xs text-zinc-400 mb-3">Enterprise Plan Active</p>
+<button class="w-full py-2 bg-white/5 hover:bg-white/10 text-white rounded-lg transition-colors text-xs font-semibold">Upgrade Plan</button>
+</div>
+<div class="pt-4 border-t border-white/5">
+<a class="flex items-center gap-3 px-4 py-2 text-zinc-500 hover:text-zinc-300 transition-all duration-200" href="#">
+<span class="material-symbols-outlined text-sm">verified_user</span>
+<span class="text-[10px] uppercase tracking-widest">Secured</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-2 text-zinc-500 hover:text-zinc-300 transition-all duration-200" href="#">
+<span class="material-symbols-outlined text-sm">help</span>
+<span class="text-[10px] uppercase tracking-widest">Support</span>
+</a>
+</div>
+</div>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 flex flex-col h-screen relative overflow-y-auto">
+<!-- TopNavBar Component -->
+<header class="sticky top-0 z-50 bg-zinc-900/60 backdrop-blur-xl border-b border-white/5 px-6 py-3 flex justify-between items-center w-full shadow-2xl shadow-indigo-500/5 font-['Manrope'] tracking-tight">
+<div class="flex items-center gap-8">
+<h2 class="text-xl font-bold bg-gradient-to-r from-indigo-400 to-violet-400 bg-clip-text text-transparent">Marrakech Tech Solutions</h2>
+<div class="hidden md:flex relative items-center">
+<span class="material-symbols-outlined absolute left-3 text-zinc-500 text-sm">search</span>
+<input class="bg-zinc-800/50 border-none rounded-full py-1.5 pl-9 pr-4 text-sm w-64 focus:ring-1 focus:ring-indigo-400/50 transition-all font-body" placeholder="Search invoices..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="flex items-center gap-2 px-4 py-2 rounded-lg bg-indigo-500/10 text-indigo-400 font-bold hover:bg-indigo-500/20 transition-all scale-95 active:scale-90 font-body text-sm">
+<span class="material-symbols-outlined">add</span>
+                    Create Invoice
+                </button>
+<div class="flex items-center gap-2">
+<button class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-zinc-800/50 transition-colors text-zinc-400">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-zinc-800/50 transition-colors text-zinc-400">
+<span class="material-symbols-outlined">account_circle</span>
+</button>
+</div>
+</div>
+</header>
+<div class="p-8 max-w-7xl mx-auto w-full">
+<div class="mb-8 flex justify-between items-end">
+<div>
+<h3 class="text-3xl font-extrabold tracking-tight mb-2">New Invoice</h3>
+<p class="text-on-surface-variant font-body">Draft #INV-2026-042</p>
+</div>
+<div class="flex gap-4">
+<button class="px-6 py-2.5 rounded-lg border border-outline-variant/15 text-on-surface hover:bg-surface-container-high transition-colors font-semibold text-sm">
+                        Save Draft
+                    </button>
+<button class="px-6 py-2.5 rounded-lg bg-gradient-to-r from-primary to-secondary text-on-primary-fixed font-bold hover:opacity-90 transition-all shadow-lg shadow-primary/20 text-sm">
+                        Validate &amp; Send to DGI
+                    </button>
+</div>
+</div>
+<!-- 3-Column Layout -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+<!-- Left: Client Info -->
+<div class="lg:col-span-3 space-y-6">
+<div class="bg-surface-container-low rounded-xl p-6 border border-white/5">
+<h4 class="text-xs font-bold uppercase tracking-widest text-zinc-500 mb-6 flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">person</span>
+                            Client Details
+                        </h4>
+<div class="space-y-4 font-body">
+<div>
+<label class="block text-[10px] uppercase tracking-widest text-zinc-500 mb-1.5 ml-1">Client Name</label>
+<input class="w-full bg-surface-container-highest border-none rounded-lg p-3 text-sm focus:ring-1 focus:ring-primary-dim/30 placeholder:text-zinc-600" type="text" value="Atlas Global Logistics"/>
+<div class="mt-1 flex items-center gap-1.5 text-[10px] text-tertiary">
+<span class="material-symbols-outlined text-[12px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                                    Verified Client
+                                </div>
+</div>
+<div>
+<label class="block text-[10px] uppercase tracking-widest text-zinc-500 mb-1.5 ml-1">ICE Number</label>
+<input class="w-full bg-surface-container-highest border-none rounded-lg p-3 text-sm focus:ring-1 focus:ring-primary-dim/30" type="text" value="001542678000034"/>
+<div class="mt-1 flex items-center gap-1.5 text-[10px] text-tertiary font-medium">
+<span class="material-symbols-outlined text-[12px]" style="font-variation-settings: 'FILL' 1;">verified</span>
+                                    ICE valid
+                                </div>
+</div>
+<div>
+<label class="block text-[10px] uppercase tracking-widest text-zinc-500 mb-1.5 ml-1">Tax Address</label>
+<textarea class="w-full bg-surface-container-highest border-none rounded-lg p-3 text-sm focus:ring-1 focus:ring-primary-dim/30 resize-none" rows="3">124 Boulevard Zerktouni, 
+Quartier Gauthier,
+Casablanca, Morocco</textarea>
+<div class="mt-1 flex items-center gap-1.5 text-[10px] text-error opacity-0">
+<span class="material-symbols-outlined text-[12px]">error</span>
+                                    Address missing
+                                </div>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-low rounded-xl p-6 border border-white/5">
+<h4 class="text-xs font-bold uppercase tracking-widest text-zinc-500 mb-4">Quick Actions</h4>
+<div class="space-y-2">
+<button class="w-full flex items-center justify-between p-3 rounded-lg hover:bg-white/5 transition-colors group">
+<span class="text-xs font-medium">Import from CRM</span>
+<span class="material-symbols-outlined text-zinc-600 group-hover:text-primary transition-colors">arrow_forward_ios</span>
+</button>
+<button class="w-full flex items-center justify-between p-3 rounded-lg hover:bg-white/5 transition-colors group">
+<span class="text-xs font-medium">Attach PDF Quote</span>
+<span class="material-symbols-outlined text-zinc-600 group-hover:text-primary transition-colors">attach_file</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Center: Line Items -->
+<div class="lg:col-span-6">
+<div class="bg-surface-container-low rounded-xl border border-white/5 overflow-hidden relative">
+<!-- Compliance Badge -->
+<div class="absolute top-6 right-6 flex items-center gap-2 px-3 py-1.5 rounded-full bg-tertiary-container/10 border border-tertiary/20">
+<span class="material-symbols-outlined text-tertiary text-sm" style="font-variation-settings: 'FILL' 1;">shield</span>
+<span class="text-[10px] font-bold uppercase tracking-widest text-tertiary">DGI Compliance Ready</span>
+</div>
+<div class="p-8">
+<h4 class="text-xs font-bold uppercase tracking-widest text-zinc-500 mb-8">Invoice Items</h4>
+<table class="w-full text-sm font-body">
+<thead>
+<tr class="text-left text-zinc-500 border-b border-white/5">
+<th class="pb-4 font-medium">Description</th>
+<th class="pb-4 font-medium text-center w-20">Qty</th>
+<th class="pb-4 font-medium text-right w-32">Price HT (MAD)</th>
+<th class="pb-4 w-10"></th>
+</tr>
+</thead>
+<tbody class="divide-y divide-white/5">
+<tr>
+<td class="py-4 pr-4">
+<input class="w-full bg-transparent border-none p-0 focus:ring-0 text-sm" type="text" value="Cloud Infrastructure Optimization Services"/>
+<span class="text-[10px] text-zinc-500 block">Quarterly maintenance and scaling audit</span>
+</td>
+<td class="py-4 text-center">
+<input class="w-full bg-transparent border-none p-0 focus:ring-0 text-sm text-center" type="number" value="1"/>
+</td>
+<td class="py-4 text-right">
+<input class="w-full bg-transparent border-none p-0 focus:ring-0 text-sm text-right" type="text" value="12,500.00"/>
+</td>
+<td class="py-4 text-right">
+<button class="text-zinc-600 hover:text-error transition-colors">
+<span class="material-symbols-outlined text-sm">delete</span>
+</button>
+</td>
+</tr>
+<tr>
+<td class="py-4 pr-4">
+<input class="w-full bg-transparent border-none p-0 focus:ring-0 text-sm" type="text" value="Premium Support Bundle"/>
+<span class="text-[10px] text-zinc-500 block">24/7 Priority support channel access</span>
+</td>
+<td class="py-4 text-center">
+<input class="w-full bg-transparent border-none p-0 focus:ring-0 text-sm text-center" type="number" value="3"/>
+</td>
+<td class="py-4 text-right">
+<input class="w-full bg-transparent border-none p-0 focus:ring-0 text-sm text-right" type="text" value="2,500.00"/>
+</td>
+<td class="py-4 text-right">
+<button class="text-zinc-600 hover:text-error transition-colors">
+<span class="material-symbols-outlined text-sm">delete</span>
+</button>
+</td>
+</tr>
+<tr class="group">
+<td class="py-4 pr-4">
+<input class="w-full bg-transparent border-none p-0 focus:ring-0 text-sm italic text-zinc-500" placeholder="Add description..." type="text"/>
+</td>
+<td class="py-4 text-center">
+<input class="w-full bg-transparent border-none p-0 focus:ring-0 text-sm text-center" placeholder="0" type="number"/>
+</td>
+<td class="py-4 text-right">
+<input class="w-full bg-transparent border-none p-0 focus:ring-0 text-sm text-right" placeholder="0.00" type="text"/>
+</td>
+<td class="py-4 text-right">
+<button class="text-indigo-400 opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-sm">add_circle</span>
+</button>
+</td>
+</tr>
+</tbody>
+</table>
+<button class="mt-6 flex items-center gap-2 text-indigo-400 font-bold text-xs hover:text-indigo-300 transition-colors">
+<span class="material-symbols-outlined text-sm">add</span>
+                                Add line item
+                            </button>
+</div>
+</div>
+</div>
+<!-- Right: Summary Card -->
+<div class="lg:col-span-3 space-y-6">
+<div class="bg-surface-container-highest rounded-xl p-8 border border-white/5 shadow-2xl shadow-black/40">
+<h4 class="text-xs font-bold uppercase tracking-widest text-zinc-400 mb-8">Summary</h4>
+<div class="space-y-4 font-body">
+<div class="flex justify-between items-center text-sm">
+<span class="text-zinc-400">Subtotal HT</span>
+<span class="font-medium tracking-tight">20,000.00 MAD</span>
+</div>
+<div class="flex justify-between items-center text-sm">
+<span class="text-zinc-400">TVA (20%)</span>
+<span class="font-medium tracking-tight">4,000.00 MAD</span>
+</div>
+<div class="pt-4 border-t border-white/10 flex justify-between items-end">
+<span class="text-zinc-400 text-xs font-bold uppercase tracking-widest">Total TTC</span>
+<div class="text-right">
+<div class="text-2xl font-black font-headline tracking-tighter text-transparent bg-gradient-to-r from-primary to-secondary bg-clip-text">24,000.00</div>
+<div class="text-[10px] text-zinc-500 font-bold uppercase tracking-widest">Moroccan Dirhams</div>
+</div>
+</div>
+</div>
+<div class="mt-8 p-4 rounded-lg bg-surface-container-low border border-white/5 space-y-3">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-tertiary/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-tertiary text-sm" style="font-variation-settings: 'FILL' 1;">lock</span>
+</div>
+<div class="text-[10px] text-zinc-400">
+<p class="font-bold text-tertiary">Validated by DGI 2026</p>
+<p>Encrypted Transaction</p>
+</div>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-low rounded-xl p-6 border border-white/5 font-body">
+<label class="block text-[10px] uppercase tracking-widest text-zinc-500 mb-3 ml-1">Internal Notes</label>
+<textarea class="w-full bg-surface-container-highest border-none rounded-lg p-3 text-xs focus:ring-1 focus:ring-primary-dim/30 resize-none h-24 placeholder:text-zinc-600" placeholder="Visible only to your team..."></textarea>
+</div>
+</div>
+</div>
+</div>
+<!-- Footer Component -->
+<footer class="mt-auto w-full py-4 bg-transparent font-['Inter'] text-[10px] uppercase tracking-widest text-zinc-600">
+<div class="flex justify-center gap-6 opacity-80 hover:opacity-100 transition-opacity">
+<span>Validated by DGI 2026</span>
+<a class="hover:text-zinc-400 flex items-center gap-1 transition-colors" href="#">
+<span class="material-symbols-outlined text-[10px]">lock</span>
+                    Secured connection
+                </a>
+<a class="hover:text-zinc-400 transition-colors" href="#">Privacy Policy</a>
+</div>
+</footer>
+</main>
+</body></html>

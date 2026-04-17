@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Clients | GEKKO Micro-ERP</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=Manrope:wght@500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-secondary-fixed-variant": "#7511c3",
+                    "inverse-on-surface": "#565556",
+                    "on-background": "#ffffff",
+                    "on-primary": "#0f00a4",
+                    "on-surface-variant": "#adaaab",
+                    "primary": "#a3a6ff",
+                    "secondary-fixed": "#e5c6ff",
+                    "secondary-container": "#6f00be",
+                    "background": "#0e0e0f",
+                    "on-secondary-fixed": "#4f0089",
+                    "on-tertiary-fixed": "#004a1d",
+                    "on-secondary-container": "#e9cdff",
+                    "surface-container-high": "#201f21",
+                    "outline-variant": "#484849",
+                    "error": "#ff6e84",
+                    "surface-container-highest": "#262627",
+                    "tertiary-container": "#6bff8f",
+                    "surface-tint": "#a3a6ff",
+                    "on-secondary": "#33005b",
+                    "primary-fixed-dim": "#8387ff",
+                    "tertiary": "#c5ffc9",
+                    "primary-dim": "#6063ee",
+                    "on-error-container": "#ffb2b9",
+                    "surface-dim": "#0e0e0f",
+                    "secondary-dim": "#9c48ea",
+                    "on-error": "#490013",
+                    "inverse-surface": "#fcf8f9",
+                    "error-container": "#a70138",
+                    "on-tertiary": "#00692c",
+                    "on-primary-fixed": "#000000",
+                    "tertiary-fixed-dim": "#5bf083",
+                    "secondary-fixed-dim": "#dbb4ff",
+                    "surface-container": "#1a191b",
+                    "surface-bright": "#2c2c2d",
+                    "surface-variant": "#262627",
+                    "surface-container-low": "#131314",
+                    "surface-container-lowest": "#000000",
+                    "inverse-primary": "#494bd7",
+                    "on-primary-fixed-variant": "#0e009d",
+                    "primary-fixed": "#9396ff",
+                    "tertiary-dim": "#5bf083",
+                    "outline": "#767576",
+                    "on-surface": "#ffffff",
+                    "error-dim": "#d73357",
+                    "primary-container": "#9396ff",
+                    "on-primary-container": "#0a0081",
+                    "surface": "#0e0e0f",
+                    "on-tertiary-fixed-variant": "#006a2d",
+                    "tertiary-fixed": "#6bff8f",
+                    "on-tertiary-container": "#005f28",
+                    "secondary": "#c180ff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.5rem",
+                    "lg": "1rem",
+                    "xl": "1.5rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Manrope"],
+                    "body": ["Inter"],
+                    "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        body {
+            background-color: #0e0e0f;
+            color: #ffffff;
+            font-family: 'Inter', sans-serif;
+        }
+        .glass-nav {
+            background: rgba(38, 38, 39, 0.6);
+            backdrop-filter: blur(20px);
+        }
+    </style>
+</head>
+<body class="flex min-h-screen">
+<!-- SideNavBar -->
+<aside class="hidden md:flex flex-col h-screen w-64 border-r border-white/5 bg-[#0e0e0f] py-8 sticky top-0">
+<div class="px-6 mb-10">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-gradient-to-br from-[#a3a6ff] to-[#c180ff] flex items-center justify-center">
+<span class="material-symbols-outlined text-black" style="font-variation-settings: 'FILL' 1;">dataset</span>
+</div>
+<div>
+<h1 class="font-['Manrope'] font-black tracking-tighter text-2xl leading-none">GEKKO</h1>
+<p class="text-[10px] uppercase tracking-[0.2em] text-zinc-500 font-bold mt-1">Micro-ERP</p>
+</div>
+</div>
+</div>
+<nav class="flex-1 px-4 space-y-2">
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-zinc-500 hover:text-zinc-300 hover:bg-white/5 transition-all duration-200" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-['Inter'] text-sm">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-zinc-500 hover:text-zinc-300 hover:bg-white/5 transition-all duration-200" href="#">
+<span class="material-symbols-outlined">receipt_long</span>
+<span class="font-['Inter'] text-sm">Invoices</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-indigo-400 bg-indigo-500/10 border-r-2 border-indigo-500 transition-all duration-200" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">group</span>
+<span class="font-['Inter'] text-sm font-medium">Clients</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-zinc-500 hover:text-zinc-300 hover:bg-white/5 transition-all duration-200" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-['Inter'] text-sm">Settings</span>
+</a>
+</nav>
+<div class="px-6 mt-auto space-y-6">
+<div class="p-4 rounded-xl bg-surface-container-high border border-white/5">
+<p class="text-xs text-zinc-400 mb-3">Professional Tier</p>
+<button class="w-full py-2 px-4 rounded-lg bg-gradient-to-r from-primary to-secondary text-on-primary-fixed text-xs font-bold hover:opacity-90 transition-opacity">
+                    Upgrade Plan
+                </button>
+</div>
+<div class="flex flex-col gap-3 pb-4">
+<a class="flex items-center gap-2 text-zinc-500 hover:text-zinc-300 transition-colors" href="#">
+<span class="material-symbols-outlined text-sm">verified_user</span>
+<span class="text-[10px] uppercase tracking-widest">Secured</span>
+</a>
+<a class="flex items-center gap-2 text-zinc-500 hover:text-zinc-300 transition-colors" href="#">
+<span class="material-symbols-outlined text-sm">help</span>
+<span class="text-[10px] uppercase tracking-widest">Support</span>
+</a>
+</div>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 flex flex-col min-w-0">
+<!-- TopNavBar -->
+<header class="sticky top-0 z-30 flex justify-between items-center w-full px-6 py-3 border-b border-white/5 bg-zinc-900/60 backdrop-blur-xl shadow-2xl shadow-indigo-500/5">
+<div class="flex items-center flex-1 max-w-xl">
+<div class="relative w-full group">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-zinc-500 group-focus-within:text-indigo-400 transition-colors">search</span>
+<input class="w-full bg-zinc-800/50 border-none rounded-lg pl-10 pr-4 py-2 text-sm focus:ring-1 focus:ring-indigo-500/50 placeholder:text-zinc-600 transition-all" placeholder="Search clients, sectors, or ICE..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-4 ml-6">
+<button class="flex items-center gap-2 px-4 py-2 rounded-lg bg-indigo-500/10 text-indigo-400 font-['Manrope'] text-sm font-bold hover:bg-indigo-500/20 transition-all scale-95 active:scale-90">
+<span class="material-symbols-outlined text-sm">add</span>
+                    Create Invoice
+                </button>
+<button class="p-2 text-zinc-400 hover:bg-zinc-800/50 rounded-full transition-colors relative">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-2 right-2 w-2 h-2 bg-indigo-500 rounded-full border-2 border-zinc-900"></span>
+</button>
+<div class="flex items-center gap-3 pl-4 border-l border-white/10">
+<div class="text-right hidden sm:block">
+<p class="text-xs font-bold text-white">Marrakech Tech Solutions</p>
+<p class="text-[10px] text-zinc-500">Administrator</p>
+</div>
+<button class="p-1 rounded-full border border-indigo-500/30">
+<span class="material-symbols-outlined text-zinc-300 text-3xl">account_circle</span>
+</button>
+</div>
+</div>
+</header>
+<!-- Content Canvas -->
+<div class="p-8 flex-1">
+<div class="max-w-7xl mx-auto">
+<!-- Page Header -->
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10">
+<div>
+<h2 class="font-['Manrope'] text-3xl font-extrabold tracking-tight text-white mb-2">Client Portfolio</h2>
+<p class="text-zinc-500 text-sm">Manage your enterprise relationships and commercial compliance.</p>
+</div>
+<button class="flex items-center justify-center gap-2 px-6 py-3 rounded-lg bg-gradient-to-r from-primary to-secondary text-on-primary-fixed font-bold shadow-lg shadow-indigo-500/20 hover:scale-[1.02] active:scale-[0.98] transition-all">
+<span class="material-symbols-outlined">person_add</span>
+                        Add New Client
+                    </button>
+</div>
+<!-- Stats Overview (Asymmetric Layout) -->
+<div class="grid grid-cols-1 md:grid-cols-4 gap-4 mb-8">
+<div class="col-span-1 md:col-span-2 p-6 rounded-xl bg-surface-container-low border border-white/5 flex items-center justify-between group">
+<div>
+<p class="text-zinc-500 text-xs uppercase tracking-widest font-bold mb-1">Total Portfolio Value</p>
+<h3 class="font-['Manrope'] text-4xl font-black text-white">482.4k <span class="text-sm font-medium text-zinc-500">MAD</span></h3>
+</div>
+<div class="w-12 h-12 rounded-full bg-indigo-500/10 flex items-center justify-center text-indigo-400">
+<span class="material-symbols-outlined text-3xl">trending_up</span>
+</div>
+</div>
+<div class="p-6 rounded-xl bg-surface-container-low border border-white/5">
+<p class="text-zinc-500 text-xs uppercase tracking-widest font-bold mb-1">Active Entities</p>
+<h3 class="font-['Manrope'] text-3xl font-bold text-white">124</h3>
+<p class="text-tertiary text-[10px] mt-2 flex items-center gap-1">
+<span class="material-symbols-outlined text-xs">check_circle</span>
+                            98% Validated ICE
+                        </p>
+</div>
+<div class="p-6 rounded-xl bg-surface-container-low border border-white/5">
+<p class="text-zinc-500 text-xs uppercase tracking-widest font-bold mb-1">New This Month</p>
+<h3 class="font-['Manrope'] text-3xl font-bold text-white">12</h3>
+<p class="text-indigo-400 text-[10px] mt-2 flex items-center gap-1">
+<span class="material-symbols-outlined text-xs">group_add</span>
+                            +15% growth
+                        </p>
+</div>
+</div>
+<!-- Filter Bar -->
+<div class="flex flex-wrap items-center gap-4 mb-6">
+<div class="flex items-center gap-2 px-3 py-1.5 rounded-full bg-surface-container-high border border-white/5 text-xs text-zinc-300">
+<span class="material-symbols-outlined text-sm">filter_alt</span>
+<span class="font-medium">Filter by Sector:</span>
+<select class="bg-transparent border-none p-0 text-xs focus:ring-0 cursor-pointer text-indigo-400 font-bold">
+<option>All Sectors</option>
+<option>Technology</option>
+<option>Logistics</option>
+<option>Retail</option>
+</select>
+</div>
+<div class="flex items-center gap-2 px-3 py-1.5 rounded-full bg-surface-container-high border border-white/5 text-xs text-zinc-300">
+<span class="material-symbols-outlined text-sm">signal_cellular_alt</span>
+<span class="font-medium">Status:</span>
+<select class="bg-transparent border-none p-0 text-xs focus:ring-0 cursor-pointer text-indigo-400 font-bold">
+<option>Active Only</option>
+<option>Pending Validation</option>
+<option>Archived</option>
+</select>
+</div>
+<div class="ml-auto flex items-center gap-2 text-xs text-zinc-500">
+<span>Showing 1-8 of 124 clients</span>
+</div>
+</div>
+<!-- Client List (Bento-style Grid) -->
+<div class="space-y-4">
+<!-- Client Item 1 (Validation Error Example) -->
+<div class="grid grid-cols-12 gap-4 items-center p-4 rounded-xl bg-surface-container-low border-l-4 border-error/50 hover:bg-surface-container-high transition-all">
+<div class="col-span-12 md:col-span-3 flex items-center gap-4">
+<div class="w-10 h-10 rounded-lg overflow-hidden flex-shrink-0">
+<img class="w-full h-full object-cover" data-alt="Corporate professional headshot of a female executive against a clean minimal office background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCxTmJpsvupbZK5blNbsekE6qanKj-cLJQnpHl1wVW1pEFK03rYrMKVp8iLfZ2Gw16bdx7QtDyXsRxFphegA4OQ71n0zHvcBiqEUSANpPIwJptgIUjmQxUre5UsxPpFGop721U5m6qCrVyWtEOj3QyXCnGZZE0_IzuFrxQcZU-SP7qU3B-n_Uti5Twi7rZOLWIXn6eg8ZkTGjiiugtKisxbzH7NtpKy5eyEmVIySxeEWxqo-8Ut3_7g7bPNmENJ4UhUggAV12f9_Csq"/>
+</div>
+<div>
+<h4 class="text-sm font-bold text-white leading-tight">Atlas Logistics S.A.</h4>
+<p class="text-[10px] text-zinc-500 uppercase tracking-wider">Transport &amp; Supply</p>
+</div>
+</div>
+<div class="col-span-6 md:col-span-2">
+<p class="text-[10px] text-zinc-500 uppercase mb-1">ICE Number</p>
+<div class="flex items-center gap-1.5">
+<span class="text-xs font-mono text-error">001542893000045</span>
+<span class="material-symbols-outlined text-error text-sm" title="Invalid ICE checksum">report</span>
+</div>
+<p class="text-[9px] text-error/70 mt-0.5">Format validation failed</p>
+</div>
+<div class="col-span-6 md:col-span-2">
+<p class="text-[10px] text-zinc-500 uppercase mb-1">Contact</p>
+<p class="text-xs text-zinc-300">m.alami@atlas.ma</p>
+</div>
+<div class="col-span-6 md:col-span-2">
+<p class="text-[10px] text-zinc-500 uppercase mb-1">Last Invoice</p>
+<p class="text-xs text-zinc-300">12 Oct 2023</p>
+</div>
+<div class="col-span-6 md:col-span-2">
+<p class="text-[10px] text-zinc-500 uppercase mb-1">Total Spent</p>
+<p class="text-sm font-bold text-white">124,500.00 <span class="text-[10px] text-zinc-500">MAD</span></p>
+</div>
+<div class="col-span-12 md:col-span-1 flex justify-end">
+<button class="p-2 hover:bg-white/5 rounded-lg text-zinc-500 transition-colors">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</div>
+</div>
+<!-- Client Item 2 (Validated Example) -->
+<div class="grid grid-cols-12 gap-4 items-center p-4 rounded-xl bg-surface-container-low border border-white/5 hover:bg-surface-container-high transition-all">
+<div class="col-span-12 md:col-span-3 flex items-center gap-4">
+<div class="w-10 h-10 rounded-lg overflow-hidden flex-shrink-0 bg-zinc-800 flex items-center justify-center">
+<span class="material-symbols-outlined text-zinc-600">apartment</span>
+</div>
+<div>
+<h4 class="text-sm font-bold text-white leading-tight">Oasis Tech Hub</h4>
+<p class="text-[10px] text-zinc-500 uppercase tracking-wider">Cloud Services</p>
+</div>
+</div>
+<div class="col-span-6 md:col-span-2">
+<p class="text-[10px] text-zinc-500 uppercase mb-1">ICE Number</p>
+<div class="flex items-center gap-1.5">
+<span class="text-xs font-mono text-zinc-400">002998711000082</span>
+<span class="material-symbols-outlined text-tertiary text-sm" style="font-variation-settings: 'FILL' 1;">verified</span>
+</div>
+</div>
+<div class="col-span-6 md:col-span-2">
+<p class="text-[10px] text-zinc-500 uppercase mb-1">Contact</p>
+<p class="text-xs text-zinc-300">billing@oasis.io</p>
+</div>
+<div class="col-span-6 md:col-span-2">
+<p class="text-[10px] text-zinc-500 uppercase mb-1">Last Invoice</p>
+<p class="text-xs text-zinc-300">05 Nov 2023</p>
+</div>
+<div class="col-span-6 md:col-span-2">
+<p class="text-[10px] text-zinc-500 uppercase mb-1">Total Spent</p>
+<p class="text-sm font-bold text-white">42,800.00 <span class="text-[10px] text-zinc-500">MAD</span></p>
+</div>
+<div class="col-span-12 md:col-span-1 flex justify-end">
+<button class="p-2 hover:bg-white/5 rounded-lg text-zinc-500 transition-colors">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</div>
+</div>
+<!-- Client Item 3 -->
+<div class="grid grid-cols-12 gap-4 items-center p-4 rounded-xl bg-surface-container-low border border-white/5 hover:bg-surface-container-high transition-all">
+<div class="col-span-12 md:col-span-3 flex items-center gap-4">
+<div class="w-10 h-10 rounded-lg overflow-hidden flex-shrink-0">
+<img class="w-full h-full object-cover" data-alt="Modern minimalist architectural logo for a boutique design firm in clean monochrome aesthetics" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDe6DHKYBALmMCRiiDR82bLAkCatBUtIgpTwbek7GjUmbzH-x_MQbhuQjCNtiAcM-OGBQ7Of3yWCdadCmeAcWnZN8wB3fH9SF2-CwAti4fdHhs2qAXX2tLk274edasLaYiBcJGWLLcGXtdncd6htzyEUqF2PJTPD1ldIg2flyBYokRNWs_YBijhddnPumi_hR6n4MnGTV1xgD28A5ceDlHekOd0cee8X0kkIECIs3nFYhFwd1NmwPU0sf5oB8frwV_mjAv39oJQOCk-"/>
+</div>
+<div>
+<h4 class="text-sm font-bold text-white leading-tight">Studio Noir SARL</h4>
+<p class="text-[10px] text-zinc-500 uppercase tracking-wider">Design &amp; Creative</p>
+</div>
+</div>
+<div class="col-span-6 md:col-span-2">
+<p class="text-[10px] text-zinc-500 uppercase mb-1">ICE Number</p>
+<div class="flex items-center gap-1.5">
+<span class="text-xs font-mono text-zinc-400">003112245000021</span>
+<span class="material-symbols-outlined text-tertiary text-sm" style="font-variation-settings: 'FILL' 1;">verified</span>
+</div>
+</div>
+<div class="col-span-6 md:col-span-2">
+<p class="text-[10px] text-zinc-500 uppercase mb-1">Contact</p>
+<p class="text-xs text-zinc-300">karim@studionoir.ma</p>
+</div>
+<div class="col-span-6 md:col-span-2">
+<p class="text-[10px] text-zinc-500 uppercase mb-1">Last Invoice</p>
+<p class="text-xs text-zinc-300">28 Oct 2023</p>
+</div>
+<div class="col-span-6 md:col-span-2">
+<p class="text-[10px] text-zinc-500 uppercase mb-1">Total Spent</p>
+<p class="text-sm font-bold text-white">8,900.00 <span class="text-[10px] text-zinc-500">MAD</span></p>
+</div>
+<div class="col-span-12 md:col-span-1 flex justify-end">
+<button class="p-2 hover:bg-white/5 rounded-lg text-zinc-500 transition-colors">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</div>
+</div>
+<!-- Client Item 4 -->
+<div class="grid grid-cols-12 gap-4 items-center p-4 rounded-xl bg-surface-container-low border border-white/5 hover:bg-surface-container-high transition-all">
+<div class="col-span-12 md:col-span-3 flex items-center gap-4">
+<div class="w-10 h-10 rounded-lg overflow-hidden flex-shrink-0 bg-zinc-800 flex items-center justify-center">
+<span class="material-symbols-outlined text-zinc-600">agriculture</span>
+</div>
+<div>
+<h4 class="text-sm font-bold text-white leading-tight">Agrimat Marra</h4>
+<p class="text-[10px] text-zinc-500 uppercase tracking-wider">Agro-Business</p>
+</div>
+</div>
+<div class="col-span-6 md:col-span-2">
+<p class="text-[10px] text-zinc-500 uppercase mb-1">ICE Number</p>
+<div class="flex items-center gap-1.5">
+<span class="text-xs font-mono text-zinc-400">002554411000076</span>
+<span class="material-symbols-outlined text-tertiary text-sm" style="font-variation-settings: 'FILL' 1;">verified</span>
+</div>
+</div>
+<div class="col-span-6 md:col-span-2">
+<p class="text-[10px] text-zinc-500 uppercase mb-1">Contact</p>
+<p class="text-xs text-zinc-300">ops@agrimat.com</p>
+</div>
+<div class="col-span-6 md:col-span-2">
+<p class="text-[10px] text-zinc-500 uppercase mb-1">Last Invoice</p>
+<p class="text-xs text-zinc-300">14 Nov 2023</p>
+</div>
+<div class="col-span-6 md:col-span-2">
+<p class="text-[10px] text-zinc-500 uppercase mb-1">Total Spent</p>
+<p class="text-sm font-bold text-white">215,700.00 <span class="text-[10px] text-zinc-500">MAD</span></p>
+</div>
+<div class="col-span-12 md:col-span-1 flex justify-end">
+<button class="p-2 hover:bg-white/5 rounded-lg text-zinc-500 transition-colors">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Footer -->
+<footer class="flex justify-center gap-6 mt-16 py-4 w-full bg-transparent">
+<span class="font-['Inter'] text-[10px] uppercase tracking-widest text-zinc-600">Validated by DGI 2026</span>
+<a class="font-['Inter'] text-[10px] uppercase tracking-widest text-emerald-400 hover:text-zinc-400 transition-colors" href="#">Secured connection</a>
+<a class="font-['Inter'] text-[10px] uppercase tracking-widest text-zinc-600 hover:text-zinc-400 transition-colors" href="#">Privacy Policy</a>
+</footer>
+</div>
+</div>
+</main>
+<!-- Contextual FAB (Only for main destinations) -->
+<div class="fixed bottom-8 right-8 md:hidden">
+<button class="w-14 h-14 rounded-full bg-primary shadow-xl shadow-primary/40 flex items-center justify-center text-on-primary-fixed">
+<span class="material-symbols-outlined text-3xl">add</span>
+</button>
+</div>
+</body></html>

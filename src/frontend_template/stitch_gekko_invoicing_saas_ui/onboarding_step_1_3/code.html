@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>GEKKO Enterprise - Onboarding</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "on-secondary-fixed-variant": "#7511c3",
+            "inverse-on-surface": "#565556",
+            "on-background": "#ffffff",
+            "on-primary": "#0f00a4",
+            "on-surface-variant": "#adaaab",
+            "primary": "#a3a6ff",
+            "secondary-fixed": "#e5c6ff",
+            "secondary-container": "#6f00be",
+            "background": "#0e0e0f",
+            "on-secondary-fixed": "#4f0089",
+            "on-tertiary-fixed": "#004a1d",
+            "on-secondary-container": "#e9cdff",
+            "surface-container-high": "#201f21",
+            "outline-variant": "#484849",
+            "error": "#ff6e84",
+            "surface-container-highest": "#262627",
+            "tertiary-container": "#6bff8f",
+            "surface-tint": "#a3a6ff",
+            "on-secondary": "#33005b",
+            "primary-fixed-dim": "#8387ff",
+            "tertiary": "#c5ffc9",
+            "primary-dim": "#6063ee",
+            "on-error-container": "#ffb2b9",
+            "surface-dim": "#0e0e0f",
+            "secondary-dim": "#9c48ea",
+            "on-error": "#490013",
+            "inverse-surface": "#fcf8f9",
+            "error-container": "#a70138",
+            "on-tertiary": "#00692c",
+            "on-primary-fixed": "#000000",
+            "tertiary-fixed-dim": "#5bf083",
+            "secondary-fixed-dim": "#dbb4ff",
+            "surface-container": "#1a191b",
+            "surface-bright": "#2c2c2d",
+            "surface-variant": "#262627",
+            "surface-container-low": "#131314",
+            "surface-container-lowest": "#000000",
+            "inverse-primary": "#494bd7",
+            "on-primary-fixed-variant": "#0e009d",
+            "primary-fixed": "#9396ff",
+            "tertiary-dim": "#5bf083",
+            "outline": "#767576",
+            "on-surface": "#ffffff",
+            "error-dim": "#d73357",
+            "primary-container": "#9396ff",
+            "on-primary-container": "#0a0081",
+            "surface": "#0e0e0f",
+            "on-tertiary-fixed-variant": "#006a2d",
+            "tertiary-fixed": "#6bff8f",
+            "on-tertiary-container": "#005f28",
+            "secondary": "#c180ff"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.5rem",
+            "lg": "1rem",
+            "xl": "1.5rem",
+            "full": "9999px"
+          },
+          "fontFamily": {
+            "headline": ["Manrope"],
+            "body": ["Inter"],
+            "label": ["Inter"]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    body { font-family: 'Inter', sans-serif; }
+    h1, h2, .brand-font { font-family: 'Manrope', sans-serif; }
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+    .gradient-bg {
+      background: linear-gradient(135deg, #a3a6ff 0%, #c180ff 100%);
+    }
+    .glass-panel {
+      background: rgba(38, 38, 39, 0.6);
+      backdrop-filter: blur(20px);
+    }
+    .ghost-border {
+      border: 1px solid rgba(72, 72, 73, 0.15);
+    }
+  </style>
+</head>
+<body class="bg-surface text-on-surface min-h-screen flex flex-col items-center justify-center relative overflow-hidden">
+<!-- Ambient Glow Background -->
+<div class="absolute top-[-10%] left-[-10%] w-[500px] h-[500px] bg-primary/10 blur-[120px] rounded-full pointer-events-none"></div>
+<div class="absolute bottom-[-10%] right-[-10%] w-[500px] h-[500px] bg-secondary/10 blur-[120px] rounded-full pointer-events-none"></div>
+<!-- Main Content Wrapper -->
+<main class="w-full max-w-xl px-6 py-12 z-10 flex flex-col items-center">
+<!-- Logo Section -->
+<div class="mb-12 flex flex-col items-center gap-4">
+<img alt="GEKKO Professional Logo" class="h-16 w-auto object-contain" data-alt="Minimalist geometric lizard logo in vibrant indigo and violet neon colors against a deep obsidian dark background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD5jGCcNYyKh15NdlFMEYDlWzMtYNTpIzxDCY-0k0jx0gVuAMs76OCAjtnecsaHib3ZEbh4b3JFhfE9aqJUjkpMk3dVHzoUXuOh5BObJW47hLgNDlDc4y5hMpF7eSHSiQbraeNzffusMFT3OxpLG0IwFH-Py8W4s0i1pLKwYRXzaC6DjcMcur_r7AFAInzVw2PfuU9cjBdgI6LKGVo3GIg5Jpbz2kCA7hYm9DybL9j-p8Yy9kkB_aUz9zAHDDXmtNLyWPxNs0n8goZ3"/>
+<div class="flex flex-col items-center">
+<span class="brand-font font-black tracking-tighter text-3xl text-primary">GEKKO</span>
+<span class="font-label text-[10px] uppercase tracking-[0.3em] text-on-surface-variant font-medium">Enterprise Suite</span>
+</div>
+</div>
+<!-- Onboarding Card -->
+<div class="w-full glass-panel rounded-xl shadow-2xl p-10 ghost-border relative">
+<!-- Progress Bar Header -->
+<div class="mb-10">
+<div class="flex justify-between items-end mb-4">
+<div>
+<h1 class="text-2xl font-extrabold tracking-tight text-on-surface">Company Setup</h1>
+<p class="text-sm text-on-surface-variant mt-1">Tell us about your business entity</p>
+</div>
+<span class="text-xs font-label uppercase tracking-widest text-primary font-bold">Step 1/3</span>
+</div>
+<!-- Progress Bar Track -->
+<div class="h-1 w-full bg-surface-container-high rounded-full overflow-hidden">
+<div class="h-full w-1/3 gradient-bg shadow-[0_0_12px_rgba(163,166,255,0.4)]"></div>
+</div>
+</div>
+<!-- Form Fields -->
+<form class="space-y-6">
+<!-- Company Name -->
+<div class="space-y-2">
+<label class="text-xs font-label uppercase tracking-wider text-on-surface-variant font-semibold">Company Name</label>
+<div class="relative">
+<input class="w-full bg-surface-container-highest border-none rounded-lg px-4 py-3.5 text-on-surface placeholder:text-on-surface-variant/40 focus:ring-1 focus:ring-primary-dim transition-all outline-none text-sm" placeholder="e.g. Marrakech Tech Solutions" type="text"/>
+</div>
+</div>
+<!-- Grid for ICE & IF -->
+<div class="grid grid-cols-2 gap-4">
+<div class="space-y-2">
+<label class="text-xs font-label uppercase tracking-wider text-on-surface-variant font-semibold">ICE Number</label>
+<input class="w-full bg-surface-container-highest border-none rounded-lg px-4 py-3.5 text-on-surface placeholder:text-on-surface-variant/40 focus:ring-1 focus:ring-primary-dim transition-all outline-none text-sm" placeholder="15-digit code" type="text"/>
+</div>
+<div class="space-y-2">
+<label class="text-xs font-label uppercase tracking-wider text-on-surface-variant font-semibold">IF Number</label>
+<input class="w-full bg-surface-container-highest border-none rounded-lg px-4 py-3.5 text-on-surface placeholder:text-on-surface-variant/40 focus:ring-1 focus:ring-primary-dim transition-all outline-none text-sm" placeholder="Tax ID" type="text"/>
+</div>
+</div>
+<!-- RC Number -->
+<div class="space-y-2">
+<label class="text-xs font-label uppercase tracking-wider text-on-surface-variant font-semibold">Registre de Commerce (RC)</label>
+<input class="w-full bg-surface-container-highest border-none rounded-lg px-4 py-3.5 text-on-surface placeholder:text-on-surface-variant/40 focus:ring-1 focus:ring-primary-dim transition-all outline-none text-sm" placeholder="Trade Register Number" type="text"/>
+</div>
+<!-- Address -->
+<div class="space-y-2">
+<label class="text-xs font-label uppercase tracking-wider text-on-surface-variant font-semibold">Registered Address</label>
+<textarea class="w-full bg-surface-container-highest border-none rounded-lg px-4 py-3.5 text-on-surface placeholder:text-on-surface-variant/40 focus:ring-1 focus:ring-primary-dim transition-all outline-none text-sm resize-none" placeholder="Full legal headquarters address..." rows="3"></textarea>
+</div>
+<!-- Primary CTA -->
+<div class="pt-4">
+<button class="w-full gradient-bg py-4 rounded-lg font-headline font-bold text-on-primary-fixed flex items-center justify-center gap-2 hover:opacity-90 active:scale-[0.98] transition-all group" type="button">
+            Next Step
+            <span class="material-symbols-outlined text-[20px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</button>
+</div>
+</form>
+<!-- Trust Indicator -->
+<div class="absolute -bottom-12 left-0 w-full flex justify-center items-center gap-6 text-[10px] uppercase tracking-widest text-on-surface-variant font-medium">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[14px] text-tertiary">verified_user</span>
+          Secure 256-bit encryption
+        </div>
+<div class="h-1 w-1 bg-outline-variant rounded-full"></div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[14px] text-tertiary">shield</span>
+          DGI Compliant
+        </div>
+</div>
+</div>
+</main>
+<!-- Footer Shell (Shared Component Mapping) -->
+<footer class="mt-auto w-full py-8 flex flex-col items-center gap-2">
+<div class="flex justify-center gap-8 text-[10px] font-label uppercase tracking-[0.2em] text-zinc-600">
+<a class="hover:text-zinc-400 transition-colors" href="#">Secured connection</a>
+<a class="hover:text-zinc-400 transition-colors" href="#">Privacy Policy</a>
+</div>
+<p class="text-[10px] font-label uppercase tracking-[0.2em] text-emerald-400/80 font-bold">Validated by DGI 2026</p>
+</footer>
+</body></html>

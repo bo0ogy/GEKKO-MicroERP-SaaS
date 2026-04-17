@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Invoices | GEKKO Micro-ERP</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-secondary-fixed-variant": "#7511c3",
+                    "inverse-on-surface": "#565556",
+                    "on-background": "#ffffff",
+                    "on-primary": "#0f00a4",
+                    "on-surface-variant": "#adaaab",
+                    "primary": "#a3a6ff",
+                    "secondary-fixed": "#e5c6ff",
+                    "secondary-container": "#6f00be",
+                    "background": "#0e0e0f",
+                    "on-secondary-fixed": "#4f0089",
+                    "on-tertiary-fixed": "#004a1d",
+                    "on-secondary-container": "#e9cdff",
+                    "surface-container-high": "#201f21",
+                    "outline-variant": "#484849",
+                    "error": "#ff6e84",
+                    "surface-container-highest": "#262627",
+                    "tertiary-container": "#6bff8f",
+                    "surface-tint": "#a3a6ff",
+                    "on-secondary": "#33005b",
+                    "primary-fixed-dim": "#8387ff",
+                    "tertiary": "#c5ffc9",
+                    "primary-dim": "#6063ee",
+                    "on-error-container": "#ffb2b9",
+                    "surface-dim": "#0e0e0f",
+                    "secondary-dim": "#9c48ea",
+                    "on-error": "#490013",
+                    "inverse-surface": "#fcf8f9",
+                    "error-container": "#a70138",
+                    "on-tertiary": "#00692c",
+                    "on-primary-fixed": "#000000",
+                    "tertiary-fixed-dim": "#5bf083",
+                    "secondary-fixed-dim": "#dbb4ff",
+                    "surface-container": "#1a191b",
+                    "surface-bright": "#2c2c2d",
+                    "surface-variant": "#262627",
+                    "surface-container-low": "#131314",
+                    "surface-container-lowest": "#000000",
+                    "inverse-primary": "#494bd7",
+                    "on-primary-fixed-variant": "#0e009d",
+                    "primary-fixed": "#9396ff",
+                    "tertiary-dim": "#5bf083",
+                    "outline": "#767576",
+                    "on-surface": "#ffffff",
+                    "error-dim": "#d73357",
+                    "primary-container": "#9396ff",
+                    "on-primary-container": "#0a0081",
+                    "surface": "#0e0e0f",
+                    "on-tertiary-fixed-variant": "#006a2d",
+                    "tertiary-fixed": "#6bff8f",
+                    "on-tertiary-container": "#005f28",
+                    "secondary": "#c180ff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.5rem",
+                    "lg": "1rem",
+                    "xl": "1.5rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Manrope"],
+                    "body": ["Inter"],
+                    "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3 { font-family: 'Manrope', sans-serif; }
+    </style>
+</head>
+<body class="bg-background text-on-surface flex min-h-screen overflow-hidden">
+<!-- SideNavBar -->
+<aside class="bg-[#0e0e0f] h-screen w-64 border-r border-white/5 flex flex-col py-8 flex-shrink-0">
+<div class="px-6 mb-12">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-gradient-to-br from-primary to-secondary flex items-center justify-center shadow-lg shadow-primary/20">
+<span class="material-symbols-outlined text-on-primary-fixed" data-icon="token" style="font-variation-settings: 'FILL' 1;">token</span>
+</div>
+<div>
+<h1 class="font-['Manrope'] font-black tracking-tighter text-2xl leading-none">GEKKO</h1>
+<p class="text-[10px] text-zinc-500 uppercase tracking-widest mt-1">Micro-ERP</p>
+</div>
+</div>
+</div>
+<nav class="flex-1 px-4 space-y-1">
+<a class="flex items-center gap-3 px-4 py-3 text-zinc-500 hover:text-zinc-300 hover:bg-white/5 transition-all duration-200 rounded-lg group" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-['Inter'] text-sm">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-indigo-400 bg-indigo-500/10 border-r-2 border-indigo-500 transition-all duration-200 rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="receipt_long" style="font-variation-settings: 'FILL' 1;">receipt_long</span>
+<span class="font-['Inter'] text-sm font-semibold">Invoices</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-zinc-500 hover:text-zinc-300 hover:bg-white/5 transition-all duration-200 rounded-lg group" href="#">
+<span class="material-symbols-outlined" data-icon="group">group</span>
+<span class="font-['Inter'] text-sm">Clients</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-zinc-500 hover:text-zinc-300 hover:bg-white/5 transition-all duration-200 rounded-lg group" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="font-['Inter'] text-sm">Settings</span>
+</a>
+</nav>
+<div class="px-6 mt-auto">
+<div class="bg-surface-container-high p-4 rounded-xl mb-6">
+<p class="text-xs text-on-surface-variant mb-2">Usage: 85%</p>
+<div class="w-full h-1.5 bg-surface-variant rounded-full overflow-hidden">
+<div class="w-[85%] h-full bg-gradient-to-r from-primary to-secondary"></div>
+</div>
+<button class="mt-4 w-full py-2 bg-indigo-500/10 text-primary text-xs font-bold rounded-lg hover:bg-indigo-500/20 transition-colors">Upgrade Plan</button>
+</div>
+<div class="space-y-4">
+<a class="flex items-center gap-3 text-zinc-600 hover:text-zinc-400 text-[10px] uppercase tracking-widest transition-opacity" href="#">
+<span class="material-symbols-outlined text-sm" data-icon="verified_user">verified_user</span>
+<span>Secured</span>
+</a>
+<a class="flex items-center gap-3 text-zinc-600 hover:text-zinc-400 text-[10px] uppercase tracking-widest transition-opacity" href="#">
+<span class="material-symbols-outlined text-sm" data-icon="help">help</span>
+<span>Support</span>
+</a>
+</div>
+</div>
+</aside>
+<div class="flex-1 flex flex-col h-screen overflow-hidden">
+<!-- TopNavBar -->
+<header class="bg-zinc-900/60 backdrop-blur-xl flex justify-between items-center w-full px-8 py-4 border-b border-white/5 sticky top-0 z-10 shadow-2xl shadow-indigo-500/5">
+<div class="flex items-center gap-8 flex-1">
+<div class="relative w-full max-w-md">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-zinc-500 text-sm" data-icon="search">search</span>
+<input class="w-full bg-zinc-800/40 border-none rounded-lg py-2 pl-10 pr-4 text-sm text-on-surface placeholder:text-zinc-500 focus:ring-1 focus:ring-primary-dim transition-all" placeholder="Search invoices, clients, or amounts..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-4 ml-6">
+<button class="flex items-center gap-2 bg-gradient-to-r from-primary to-secondary text-on-primary-fixed px-5 py-2 rounded-lg font-['Manrope'] font-bold text-sm hover:opacity-90 active:scale-95 transition-all shadow-lg shadow-primary/20">
+<span class="material-symbols-outlined text-sm" data-icon="add">add</span>
+                    Create Invoice
+                </button>
+<div class="flex items-center gap-2 border-l border-white/10 pl-4">
+<button class="p-2 text-zinc-400 hover:bg-zinc-800/50 rounded-full transition-colors relative">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+<span class="absolute top-2 right-2 w-2 h-2 bg-secondary rounded-full border-2 border-zinc-900"></span>
+</button>
+<button class="flex items-center gap-2 p-1 pl-3 bg-zinc-800/40 rounded-full hover:bg-zinc-800/60 transition-colors border border-white/5">
+<span class="text-xs font-medium text-zinc-300">Marrakech Tech</span>
+<div class="w-7 h-7 rounded-full bg-indigo-500/20 flex items-center justify-center overflow-hidden">
+<span class="material-symbols-outlined text-indigo-400 text-lg" data-icon="account_circle">account_circle</span>
+</div>
+</button>
+</div>
+</div>
+</header>
+<!-- Main Content -->
+<main class="flex-1 overflow-y-auto p-8 bg-background custom-scrollbar">
+<div class="max-w-7xl mx-auto">
+<div class="flex items-end justify-between mb-10">
+<div>
+<h2 class="text-4xl font-['Manrope'] font-extrabold tracking-tight text-on-surface mb-2">Invoice Ledger</h2>
+<p class="text-on-surface-variant font-['Inter'] flex items-center gap-2">
+<span class="material-symbols-outlined text-tertiary" data-icon="verified" style="font-variation-settings: 'FILL' 1;">verified</span>
+                            Validated by DGI 2026 • 124 Invoices this month
+                        </p>
+</div>
+<div class="flex gap-2">
+<div class="bg-surface-container-low p-1 rounded-lg flex border border-white/5">
+<button class="px-4 py-1.5 text-xs font-semibold bg-zinc-800 text-on-surface rounded-md shadow-sm">All</button>
+<button class="px-4 py-1.5 text-xs font-semibold text-on-surface-variant hover:text-on-surface transition-colors">Pending</button>
+<button class="px-4 py-1.5 text-xs font-semibold text-on-surface-variant hover:text-on-surface transition-colors">Paid</button>
+</div>
+<button class="flex items-center gap-2 bg-surface-container-high px-4 py-2 rounded-lg text-sm text-zinc-300 hover:bg-surface-variant transition-colors border border-white/5">
+<span class="material-symbols-outlined text-sm" data-icon="filter_list">filter_list</span>
+                            Filters
+                        </button>
+</div>
+</div>
+<!-- Table Container -->
+<div class="bg-surface-container-low rounded-xl border border-white/5 overflow-hidden shadow-2xl">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="border-b border-white/5">
+<th class="px-6 py-4 text-[10px] uppercase tracking-widest font-bold text-zinc-500">Invoice ID</th>
+<th class="px-6 py-4 text-[10px] uppercase tracking-widest font-bold text-zinc-500">Client</th>
+<th class="px-6 py-4 text-[10px] uppercase tracking-widest font-bold text-zinc-500">Date Issued</th>
+<th class="px-6 py-4 text-[10px] uppercase tracking-widest font-bold text-zinc-500 text-right">Amount</th>
+<th class="px-6 py-4 text-[10px] uppercase tracking-widest font-bold text-zinc-500">Status</th>
+<th class="px-6 py-4 text-[10px] uppercase tracking-widest font-bold text-zinc-500 text-center">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-white/[0.03]">
+<!-- Row 1 -->
+<tr class="hover:bg-white/[0.02] transition-colors group">
+<td class="px-6 py-5">
+<span class="font-['Manrope'] font-bold text-primary group-hover:underline cursor-pointer">#INV-2024-001</span>
+</td>
+<td class="px-6 py-5">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded bg-surface-container-highest flex items-center justify-center text-xs font-bold text-secondary">AM</div>
+<div>
+<p class="text-sm font-semibold text-on-surface">Atlas Media SARL</p>
+<p class="text-[10px] text-on-surface-variant">billing@atlasmedia.ma</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-5 text-sm text-on-surface-variant">Oct 12, 2024</td>
+<td class="px-6 py-5 text-sm font-bold text-on-surface text-right">12,450.00 MAD</td>
+<td class="px-6 py-5">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-tertiary-container/10 text-tertiary text-[10px] font-black uppercase tracking-wider border border-tertiary/20">
+<span class="material-symbols-outlined text-[14px]" data-icon="check_circle" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                                        Validated
+                                    </span>
+</td>
+<td class="px-6 py-5">
+<div class="flex items-center justify-center gap-2">
+<button class="p-2 hover:bg-zinc-800 rounded-lg text-zinc-400 hover:text-primary transition-all" title="View"><span class="material-symbols-outlined" data-icon="visibility">visibility</span></button>
+<button class="p-2 hover:bg-zinc-800 rounded-lg text-zinc-400 hover:text-on-surface transition-all" title="Download"><span class="material-symbols-outlined" data-icon="download">download</span></button>
+<button class="p-2 hover:bg-zinc-800 rounded-lg text-zinc-400 hover:text-secondary transition-all" title="Resend"><span class="material-symbols-outlined" data-icon="send">send</span></button>
+</div>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-white/[0.02] transition-colors group">
+<td class="px-6 py-5">
+<span class="font-['Manrope'] font-bold text-primary group-hover:underline cursor-pointer">#INV-2024-002</span>
+</td>
+<td class="px-6 py-5">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded bg-surface-container-highest flex items-center justify-center text-xs font-bold text-primary">SC</div>
+<div>
+<p class="text-sm font-semibold text-on-surface">Sahara Cloud</p>
+<p class="text-[10px] text-on-surface-variant">finance@saharacloud.com</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-5 text-sm text-on-surface-variant">Oct 14, 2024</td>
+<td class="px-6 py-5 text-sm font-bold text-on-surface text-right">45,000.00 MAD</td>
+<td class="px-6 py-5">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-amber-500/10 text-amber-400 text-[10px] font-black uppercase tracking-wider border border-amber-500/20">
+<span class="material-symbols-outlined text-[14px]" data-icon="schedule">schedule</span>
+                                        Pending
+                                    </span>
+</td>
+<td class="px-6 py-5">
+<div class="flex items-center justify-center gap-2">
+<button class="p-2 hover:bg-zinc-800 rounded-lg text-zinc-400 hover:text-primary transition-all"><span class="material-symbols-outlined" data-icon="visibility">visibility</span></button>
+<button class="p-2 hover:bg-zinc-800 rounded-lg text-zinc-400 hover:text-on-surface transition-all"><span class="material-symbols-outlined" data-icon="download">download</span></button>
+<button class="p-2 hover:bg-zinc-800 rounded-lg text-zinc-400 hover:text-secondary transition-all"><span class="material-symbols-outlined" data-icon="send">send</span></button>
+</div>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="hover:bg-white/[0.02] transition-colors group">
+<td class="px-6 py-5">
+<span class="font-['Manrope'] font-bold text-primary group-hover:underline cursor-pointer">#INV-2024-003</span>
+</td>
+<td class="px-6 py-5">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded bg-surface-container-highest flex items-center justify-center text-xs font-bold text-tertiary">NT</div>
+<div>
+<p class="text-sm font-semibold text-on-surface">Neo Tech Solutions</p>
+<p class="text-[10px] text-on-surface-variant">support@neotech.ma</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-5 text-sm text-on-surface-variant">Oct 15, 2024</td>
+<td class="px-6 py-5 text-sm font-bold text-on-surface text-right">3,200.00 MAD</td>
+<td class="px-6 py-5">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-error-container/20 text-error text-[10px] font-black uppercase tracking-wider border border-error/20">
+<span class="material-symbols-outlined text-[14px]" data-icon="cancel">cancel</span>
+                                        Rejected
+                                    </span>
+</td>
+<td class="px-6 py-5">
+<div class="flex items-center justify-center gap-2">
+<button class="p-2 hover:bg-zinc-800 rounded-lg text-zinc-400 hover:text-primary transition-all"><span class="material-symbols-outlined" data-icon="visibility">visibility</span></button>
+<button class="p-2 hover:bg-zinc-800 rounded-lg text-zinc-400 hover:text-on-surface transition-all"><span class="material-symbols-outlined" data-icon="download">download</span></button>
+<button class="p-2 hover:bg-zinc-800 rounded-lg text-zinc-400 hover:text-secondary transition-all"><span class="material-symbols-outlined" data-icon="send">send</span></button>
+</div>
+</td>
+</tr>
+<!-- Row 4 -->
+<tr class="hover:bg-white/[0.02] transition-colors group">
+<td class="px-6 py-5">
+<span class="font-['Manrope'] font-bold text-primary group-hover:underline cursor-pointer">#INV-2024-004</span>
+</td>
+<td class="px-6 py-5">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded bg-surface-container-highest flex items-center justify-center text-xs font-bold text-secondary-fixed">BL</div>
+<div>
+<p class="text-sm font-semibold text-on-surface">Blue Line Logistics</p>
+<p class="text-[10px] text-on-surface-variant">ops@blueline.ma</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-5 text-sm text-on-surface-variant">Oct 16, 2024</td>
+<td class="px-6 py-5 text-sm font-bold text-on-surface text-right">21,780.50 MAD</td>
+<td class="px-6 py-5">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-tertiary-container/10 text-tertiary text-[10px] font-black uppercase tracking-wider border border-tertiary/20">
+<span class="material-symbols-outlined text-[14px]" data-icon="check_circle" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                                        Validated
+                                    </span>
+</td>
+<td class="px-6 py-5">
+<div class="flex items-center justify-center gap-2">
+<button class="p-2 hover:bg-zinc-800 rounded-lg text-zinc-400 hover:text-primary transition-all"><span class="material-symbols-outlined" data-icon="visibility">visibility</span></button>
+<button class="p-2 hover:bg-zinc-800 rounded-lg text-zinc-400 hover:text-on-surface transition-all"><span class="material-symbols-outlined" data-icon="download">download</span></button>
+<button class="p-2 hover:bg-zinc-800 rounded-lg text-zinc-400 hover:text-secondary transition-all"><span class="material-symbols-outlined" data-icon="send">send</span></button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<!-- Table Footer / Pagination -->
+<div class="px-6 py-4 flex items-center justify-between border-t border-white/5 bg-zinc-900/20">
+<p class="text-xs text-on-surface-variant">Showing <span class="text-on-surface font-bold">1-4</span> of <span class="text-on-surface font-bold">124</span> invoices</p>
+<div class="flex items-center gap-1">
+<button class="p-1 text-zinc-600 cursor-not-allowed"><span class="material-symbols-outlined" data-icon="chevron_left">chevron_left</span></button>
+<button class="w-8 h-8 flex items-center justify-center rounded-lg bg-primary/10 text-primary text-xs font-bold">1</button>
+<button class="w-8 h-8 flex items-center justify-center rounded-lg hover:bg-white/5 text-zinc-500 text-xs font-bold transition-colors">2</button>
+<button class="w-8 h-8 flex items-center justify-center rounded-lg hover:bg-white/5 text-zinc-500 text-xs font-bold transition-colors">3</button>
+<span class="text-zinc-600 px-1 text-xs">...</span>
+<button class="w-8 h-8 flex items-center justify-center rounded-lg hover:bg-white/5 text-zinc-500 text-xs font-bold transition-colors">32</button>
+<button class="p-1 text-zinc-400 hover:text-on-surface transition-colors"><span class="material-symbols-outlined" data-icon="chevron_right">chevron_right</span></button>
+</div>
+</div>
+</div>
+<!-- Summary Bento Section -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
+<div class="bg-surface-container-low p-6 rounded-xl border border-white/5 flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-tertiary/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-tertiary" data-icon="account_balance_wallet" style="font-variation-settings: 'FILL' 1;">account_balance_wallet</span>
+</div>
+<div>
+<p class="text-[10px] uppercase tracking-widest text-zinc-500 font-bold mb-1">Monthly Collected</p>
+<p class="text-xl font-['Manrope'] font-black text-on-surface">142,500 MAD</p>
+</div>
+</div>
+<div class="bg-surface-container-low p-6 rounded-xl border border-white/5 flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-amber-500/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-amber-500" data-icon="hourglass_empty">hourglass_empty</span>
+</div>
+<div>
+<p class="text-[10px] uppercase tracking-widest text-zinc-500 font-bold mb-1">Pending Amount</p>
+<p class="text-xl font-['Manrope'] font-black text-on-surface">58,200 MAD</p>
+</div>
+</div>
+<div class="bg-surface-container-low p-6 rounded-xl border border-white/5 flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary" data-icon="trending_up">trending_up</span>
+</div>
+<div>
+<p class="text-[10px] uppercase tracking-widest text-zinc-500 font-bold mb-1">Growth vs Last Month</p>
+<p class="text-xl font-['Manrope'] font-black text-on-surface">+12.4%</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Footer component from JSON -->
+<footer class="flex justify-center gap-6 mt-16 w-full py-4 text-emerald-400 font-['Inter'] text-[10px] uppercase tracking-widest bg-transparent">
+<span class="text-zinc-600">Validated by DGI 2026</span>
+<a class="hover:text-zinc-400 opacity-80 hover:opacity-100 transition-all" href="#">Secured connection</a>
+<a class="hover:text-zinc-400 opacity-80 hover:opacity-100 transition-all" href="#">Privacy Policy</a>
+</footer>
+</main>
+</div>
+<!-- Floating Secure Badge -->
+<div class="fixed bottom-8 right-8 flex items-center gap-2 bg-zinc-900/80 backdrop-blur-md border border-tertiary/20 px-4 py-2 rounded-full shadow-2xl z-50">
+<span class="material-symbols-outlined text-tertiary text-sm" data-icon="verified_user">verified_user</span>
+<span class="text-[9px] font-black uppercase tracking-widest text-on-surface-variant">Encrypted &amp; DGI Compliant</span>
+</div>
+</body></html>

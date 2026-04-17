@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>GEKKO Enterprise - Settings</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-secondary-fixed-variant": "#7511c3",
+                        "inverse-on-surface": "#565556",
+                        "on-background": "#ffffff",
+                        "on-primary": "#0f00a4",
+                        "on-surface-variant": "#adaaab",
+                        "primary": "#a3a6ff",
+                        "secondary-fixed": "#e5c6ff",
+                        "secondary-container": "#6f00be",
+                        "background": "#0e0e0f",
+                        "on-secondary-fixed": "#4f0089",
+                        "on-tertiary-fixed": "#004a1d",
+                        "on-secondary-container": "#e9cdff",
+                        "surface-container-high": "#201f21",
+                        "outline-variant": "#484849",
+                        "error": "#ff6e84",
+                        "surface-container-highest": "#262627",
+                        "tertiary-container": "#6bff8f",
+                        "surface-tint": "#a3a6ff",
+                        "on-secondary": "#33005b",
+                        "primary-fixed-dim": "#8387ff",
+                        "tertiary": "#c5ffc9",
+                        "primary-dim": "#6063ee",
+                        "on-error-container": "#ffb2b9",
+                        "surface-dim": "#0e0e0f",
+                        "secondary-dim": "#9c48ea",
+                        "on-error": "#490013",
+                        "inverse-surface": "#fcf8f9",
+                        "error-container": "#a70138",
+                        "on-tertiary": "#00692c",
+                        "on-primary-fixed": "#000000",
+                        "tertiary-fixed-dim": "#5bf083",
+                        "secondary-fixed-dim": "#dbb4ff",
+                        "surface-container": "#1a191b",
+                        "surface-bright": "#2c2c2d",
+                        "surface-variant": "#262627",
+                        "surface-container-low": "#131314",
+                        "surface-container-lowest": "#000000",
+                        "inverse-primary": "#494bd7",
+                        "on-primary-fixed-variant": "#0e009d",
+                        "primary-fixed": "#9396ff",
+                        "tertiary-dim": "#5bf083",
+                        "outline": "#767576",
+                        "on-surface": "#ffffff",
+                        "error-dim": "#d73357",
+                        "primary-container": "#9396ff",
+                        "on-primary-container": "#0a0081",
+                        "surface": "#0e0e0f",
+                        "on-tertiary-fixed-variant": "#006a2d",
+                        "tertiary-fixed": "#6bff8f",
+                        "on-tertiary-container": "#005f28",
+                        "secondary": "#c180ff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.5rem",
+                        "lg": "1rem",
+                        "xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Manrope"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        ::-webkit-scrollbar { width: 4px; }
+        ::-webkit-scrollbar-track { background: #0e0e0f; }
+        ::-webkit-scrollbar-thumb { background: #262627; border-radius: 10px; }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body selection:bg-primary/30 selection:text-primary min-h-screen flex overflow-hidden">
+<!-- SideNavBar (Authority Source: JSON) -->
+<aside class="hidden md:flex flex-col h-screen w-64 border-r border-white/5 bg-[#0e0e0f] py-8 z-50">
+<div class="px-8 mb-12">
+<h1 class="font-headline font-black tracking-tighter text-2xl bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">GEKKO</h1>
+<p class="font-label text-[10px] uppercase tracking-widest text-zinc-500 mt-1">Micro-ERP</p>
+</div>
+<nav class="flex-grow space-y-2 px-4">
+<a class="flex items-center gap-3 px-4 py-3 text-zinc-500 hover:text-zinc-300 hover:bg-white/5 transition-all duration-200 rounded-lg group" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-label text-sm">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-zinc-500 hover:text-zinc-300 hover:bg-white/5 transition-all duration-200 rounded-lg group" href="#">
+<span class="material-symbols-outlined" data-icon="receipt_long">receipt_long</span>
+<span class="font-label text-sm">Invoices</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-zinc-500 hover:text-zinc-300 hover:bg-white/5 transition-all duration-200 rounded-lg group" href="#">
+<span class="material-symbols-outlined" data-icon="group">group</span>
+<span class="font-label text-sm">Clients</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-indigo-400 bg-indigo-500/10 border-r-2 border-indigo-500 transition-all duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="font-label text-sm">Settings</span>
+</a>
+</nav>
+<div class="px-6 mt-auto">
+<div class="bg-surface-container-high rounded-xl p-4 mb-6 relative overflow-hidden">
+<div class="relative z-10">
+<p class="font-headline text-xs font-bold mb-2">Upgrade Plan</p>
+<p class="text-[10px] text-zinc-400 mb-3">Unlock DGI compliance automation.</p>
+<button class="w-full py-2 bg-gradient-to-r from-primary to-secondary text-on-primary-fixed font-bold text-xs rounded-lg transition-transform active:scale-95">Upgrade</button>
+</div>
+<div class="absolute -right-4 -bottom-4 w-16 h-16 bg-primary/10 rounded-full blur-2xl"></div>
+</div>
+<div class="space-y-4 pb-4 border-t border-white/5 pt-4">
+<div class="flex items-center gap-2 text-zinc-600 hover:text-zinc-400 cursor-pointer">
+<span class="material-symbols-outlined text-sm" data-icon="verified_user">verified_user</span>
+<span class="font-label text-[10px] uppercase tracking-widest">Secured</span>
+</div>
+<div class="flex items-center gap-2 text-zinc-600 hover:text-zinc-400 cursor-pointer">
+<span class="material-symbols-outlined text-sm" data-icon="help">help</span>
+<span class="font-label text-[10px] uppercase tracking-widest">Support</span>
+</div>
+</div>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-grow flex flex-col h-screen overflow-y-auto">
+<!-- TopNavBar (Authority Source: JSON) -->
+<header class="sticky top-0 z-40 bg-zinc-900/60 backdrop-blur-xl border-b border-white/5 flex justify-between items-center w-full px-6 py-3 shadow-2xl shadow-indigo-500/5">
+<div class="flex items-center gap-4">
+<span class="font-headline tracking-tight text-xl font-bold bg-gradient-to-r from-indigo-400 to-violet-400 bg-clip-text text-transparent">Settings</span>
+<div class="hidden lg:flex items-center bg-zinc-800/50 rounded-lg px-3 py-1.5 gap-2 border border-white/5">
+<span class="material-symbols-outlined text-zinc-500 text-sm" data-icon="search">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-sm text-zinc-300 w-48 font-body" placeholder="Search settings..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="hidden md:flex items-center gap-2 px-4 py-2 bg-indigo-500/10 text-indigo-400 font-bold text-xs rounded-lg hover:bg-indigo-500/20 transition-all">
+<span class="material-symbols-outlined text-sm" data-icon="add">add</span>
+                    Create Invoice
+                </button>
+<div class="flex items-center gap-3 pl-4 border-l border-white/10">
+<button class="material-symbols-outlined text-zinc-400 hover:text-zinc-300 transition-colors" data-icon="notifications">notifications</button>
+<button class="material-symbols-outlined text-zinc-400 hover:text-zinc-300 transition-colors" data-icon="account_circle">account_circle</button>
+</div>
+</div>
+</header>
+<div class="max-w-6xl mx-auto w-full p-6 lg:p-10">
+<div class="flex flex-col lg:flex-row gap-8">
+<!-- Vertical Tabs -->
+<nav class="lg:w-64 flex flex-row lg:flex-col gap-1 overflow-x-auto pb-4 lg:pb-0 scrollbar-hide">
+<button class="flex items-center gap-3 px-4 py-3 bg-surface-container-high text-primary rounded-xl whitespace-nowrap">
+<span class="material-symbols-outlined" data-icon="business">business</span>
+<span class="font-medium text-sm">Company Profile</span>
+</button>
+<button class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-container-low transition-colors rounded-xl whitespace-nowrap">
+<span class="material-symbols-outlined" data-icon="receipt">receipt</span>
+<span class="font-medium text-sm">Invoicing</span>
+</button>
+<button class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-container-low transition-colors rounded-xl whitespace-nowrap">
+<span class="material-symbols-outlined" data-icon="security">security</span>
+<span class="font-medium text-sm">Security</span>
+</button>
+<button class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-container-low transition-colors rounded-xl whitespace-nowrap">
+<span class="material-symbols-outlined" data-icon="inventory_2">inventory_2</span>
+<span class="font-medium text-sm">Storage &amp; Compliance</span>
+</button>
+</nav>
+<!-- Settings Canvas -->
+<div class="flex-grow space-y-8">
+<!-- Company Profile Section -->
+<section class="space-y-6">
+<div class="flex justify-between items-end border-b border-white/5 pb-4">
+<div>
+<h2 class="font-headline text-2xl font-bold tracking-tight">Company Profile</h2>
+<p class="text-on-surface-variant text-sm mt-1">Manage your brand identity and bank credentials.</p>
+</div>
+<button class="px-6 py-2 bg-gradient-to-r from-primary to-secondary text-on-primary-fixed font-bold rounded-lg scale-95 hover:scale-100 active:scale-95 transition-transform">Save Changes</button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Logo Upload -->
+<div class="md:col-span-1 bg-surface-container-low rounded-xl p-6 flex flex-col items-center justify-center border border-white/5 group hover:border-primary/20 transition-colors">
+<div class="w-24 h-24 rounded-full bg-surface-container-highest border-2 border-dashed border-outline-variant flex items-center justify-center mb-4 relative overflow-hidden">
+<img class="absolute inset-0 w-full h-full object-cover opacity-80" data-alt="minimalist company logo icon in grayscale on a clean dark background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCq0nxR94eqCo0FWcarRpp1GNfxlSODN8QDOON0gWVkeh4Cneeuxxao_W93ydpPCxTjgXtmX76w2y45okANdzoSngJOxXaizmmLuaIIIrjpf-dwR5XdswC55XGFZBzSAGCFdP6HLGwy2vlkR6ECn9LOYtIy0oMUQ7wTc6Ya-zzNBDMwOTFhLv7EHjZJDfx3LAsivvRV1fbZoZfDI9yZseEPXtvlerVa6feuzMpi03KFzheOWM3FNpO_mPRFlYXU5o7YVxAsEkkdMpiq"/>
+<div class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-white" data-icon="upload">upload</span>
+</div>
+</div>
+<span class="font-label text-[10px] uppercase tracking-widest text-on-surface-variant">Update Logo</span>
+</div>
+<!-- Form Details -->
+<div class="md:col-span-2 space-y-4">
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+<div class="space-y-1.5">
+<label class="font-label text-[10px] uppercase tracking-widest text-on-surface-variant ml-1">Company Name</label>
+<input class="w-full bg-surface-container-highest border border-white/10 rounded-lg px-4 py-2.5 focus:ring-1 focus:ring-primary focus:border-primary outline-none transition-all" type="text" value="Marrakech Tech Solutions"/>
+</div>
+<div class="space-y-1.5">
+<label class="font-label text-[10px] uppercase tracking-widest text-on-surface-variant ml-1">ICE / Registration</label>
+<input class="w-full bg-surface-container-highest border border-white/10 rounded-lg px-4 py-2.5 focus:ring-1 focus:ring-primary focus:border-primary outline-none transition-all" type="text" value="0012345678900"/>
+</div>
+</div>
+<div class="space-y-1.5">
+<label class="font-label text-[10px] uppercase tracking-widest text-on-surface-variant ml-1">Headquarters Address</label>
+<textarea class="w-full bg-surface-container-highest border border-white/10 rounded-lg px-4 py-2.5 focus:ring-1 focus:ring-primary focus:border-primary outline-none transition-all resize-none" rows="2">Avenue Mohammed VI, Hivernage, Marrakech 40000, Morocco</textarea>
+</div>
+</div>
+</div>
+<!-- Bank Info (RIB) -->
+<div class="bg-surface-container-low rounded-xl p-6 border border-white/5">
+<div class="flex items-center gap-3 mb-4">
+<span class="material-symbols-outlined text-primary" data-icon="account_balance">account_balance</span>
+<h3 class="font-headline font-bold">Banking Information (RIB)</h3>
+</div>
+<div class="flex flex-col sm:flex-row gap-4 items-center">
+<div class="flex-grow w-full font-mono text-xl tracking-wider bg-surface-container-lowest p-4 rounded-lg border border-white/5 flex justify-between items-center group">
+<span>MA64 007 123 4567 8901 2345 6789</span>
+<button class="material-symbols-outlined text-zinc-600 hover:text-primary transition-colors opacity-0 group-hover:opacity-100" data-icon="content_copy">content_copy</button>
+</div>
+<button class="w-full sm:w-auto px-6 py-4 border border-outline-variant/30 rounded-lg hover:bg-white/5 transition-colors font-medium text-sm">Edit Credentials</button>
+</div>
+</div>
+</section>
+<!-- Invoicing Section -->
+<section class="space-y-6 pt-8">
+<div class="border-b border-white/5 pb-4">
+<h2 class="font-headline text-2xl font-bold tracking-tight">Invoicing &amp; VAT</h2>
+<p class="text-on-surface-variant text-sm mt-1">Configure your legal numbering and tax rates.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="bg-surface-container-low rounded-xl p-6 border border-white/5 space-y-4">
+<label class="font-label text-[10px] uppercase tracking-widest text-on-surface-variant">Invoice Sequence Prefix</label>
+<div class="flex items-center gap-2">
+<input class="flex-grow bg-surface-container-highest border border-white/10 rounded-lg px-4 py-2.5 font-mono text-primary" type="text" value="INV-2026-"/>
+<div class="px-3 py-2.5 bg-surface-container-lowest rounded-lg text-zinc-500 font-mono text-sm border border-white/5 italic">001</div>
+</div>
+<p class="text-[10px] text-zinc-500 italic">Your next invoice will be: INV-2026-001</p>
+</div>
+<div class="bg-surface-container-low rounded-xl p-6 border border-white/5 space-y-4">
+<label class="font-label text-[10px] uppercase tracking-widest text-on-surface-variant">Default TVA (VAT) Rate</label>
+<div class="flex gap-2">
+<button class="flex-grow py-2.5 rounded-lg bg-surface-container-highest border border-white/5 text-sm hover:border-primary/50 transition-colors">0%</button>
+<button class="flex-grow py-2.5 rounded-lg bg-surface-container-highest border border-white/5 text-sm hover:border-primary/50 transition-colors">10%</button>
+<button class="flex-grow py-2.5 rounded-lg bg-primary/20 border border-primary text-primary text-sm font-bold">20%</button>
+<button class="flex-grow py-2.5 rounded-lg bg-surface-container-highest border border-white/5 text-sm hover:border-primary/50 transition-colors">Other</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Security & Compliance Bento -->
+<section class="grid grid-cols-1 md:grid-cols-3 gap-6 pt-8 pb-12">
+<!-- Password Reset -->
+<div class="md:col-span-2 bg-surface-container-low rounded-xl p-8 border border-white/5 flex flex-col justify-between">
+<div>
+<h3 class="font-headline text-xl font-bold mb-2">Security &amp; Access</h3>
+<p class="text-on-surface-variant text-sm mb-8">Maintain account integrity with frequent password rotations and 2FA.</p>
+<div class="space-y-6">
+<div class="flex items-center justify-between p-4 bg-surface-container-highest rounded-lg border border-white/5">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-indigo-500/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-indigo-400" data-icon="lock_reset">lock_reset</span>
+</div>
+<div>
+<p class="font-medium text-sm">Account Password</p>
+<p class="text-xs text-zinc-500">Last changed 4 months ago</p>
+</div>
+</div>
+<button class="text-primary text-xs font-bold hover:underline">Update</button>
+</div>
+<div class="flex items-center justify-between p-4 bg-surface-container-highest rounded-lg border border-white/5">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-tertiary/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-tertiary" data-icon="phonelink_setup">phonelink_setup</span>
+</div>
+<div>
+<p class="font-medium text-sm">Two-Factor Authentication</p>
+<p class="text-xs text-tertiary">Active via Authenticator App</p>
+</div>
+</div>
+<div class="w-10 h-5 bg-tertiary rounded-full relative cursor-pointer">
+<div class="absolute right-0.5 top-0.5 w-4 h-4 bg-on-tertiary rounded-full"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Compliance Shield Card -->
+<div class="bg-gradient-to-br from-surface-container-low to-surface-container-highest rounded-xl p-8 border border-tertiary/10 relative overflow-hidden flex flex-col">
+<div class="absolute top-0 right-0 w-32 h-32 bg-tertiary/5 blur-3xl rounded-full -mr-16 -mt-16"></div>
+<div class="w-12 h-12 bg-tertiary/10 rounded-xl flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-tertiary text-3xl" data-icon="verified" style="font-variation-settings: 'FILL' 1;">verified</span>
+</div>
+<h3 class="font-headline font-bold text-lg mb-4 text-tertiary">Compliance Validated</h3>
+<p class="text-zinc-300 text-sm leading-relaxed flex-grow">
+                                Your data is stored securely and compliant with <span class="font-bold text-white">2026 DGI regulations</span> and Moroccan data protection laws.
+                            </p>
+<div class="mt-8 flex items-center gap-2">
+<div class="h-1 w-full bg-white/5 rounded-full overflow-hidden">
+<div class="h-full w-full bg-tertiary"></div>
+</div>
+<span class="font-label text-[10px] text-tertiary whitespace-nowrap">100% SECURE</span>
+</div>
+</div>
+</section>
+</div>
+</div>
+</div>
+<!-- Footer (Authority Source: JSON) -->
+<footer class="mt-auto w-full py-4 bg-transparent flex justify-center gap-6">
+<p class="font-label text-[10px] uppercase tracking-widest text-zinc-600">Validated by DGI 2026</p>
+<div class="flex gap-6">
+<a class="font-label text-[10px] uppercase tracking-widest text-emerald-400 hover:text-zinc-400 transition-opacity opacity-80 hover:opacity-100" href="#">Secured connection</a>
+<a class="font-label text-[10px] uppercase tracking-widest text-zinc-600 hover:text-zinc-400 transition-opacity opacity-80 hover:opacity-100" href="#">Privacy Policy</a>
+</div>
+</footer>
+</main>
+</body></html>
