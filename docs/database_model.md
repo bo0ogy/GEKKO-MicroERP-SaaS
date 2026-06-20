@@ -11,6 +11,7 @@ erDiagram
     ORGANIZATION ||--o{ PRODUCT : "propose"
     ORGANIZATION ||--o{ QUOTATION : "emet"
     ORGANIZATION ||--o{ INVOICE : "emet"
+    ORGANIZATION ||--o{ PAYMENT : "recoit"
 
     USER }|--|| ROLE : "possede"
     CLIENT ||--o{ QUOTATION : "recoit"
@@ -19,6 +20,7 @@ erDiagram
     QUOTATION ||--|{ QUOTATION_LINE : "contient"
     QUOTATION ||--o{ INVOICE : "transforme_en"
     INVOICE ||--|{ INVOICE_LINE : "contient"
+    INVOICE ||--o{ PAYMENT : "a"
     PRODUCT ||--o{ QUOTATION_LINE : "est_reference_dans"
     PRODUCT ||--o{ INVOICE_LINE : "est_reference_dans"
 
@@ -72,6 +74,7 @@ C'est le "Tenant" principal. Chaque entrepreneur a sa propre organisation.
 - **prix_unitaire_ht**: Prix de base.
 - **unite**: (Heure, Jour, Unité, Kg, etc.).
 - **default_tax_rate_id**: Taux de TVA par défaut associé.
+- **compte_comptable**: Numéro de compte comptable selon le PCM (ex: 7111 pour vente de marchandises, 7121 pour vente de prestations de services). [NOUVEAU]
 
 ### 5. Devis (Quotations)
 
@@ -92,10 +95,10 @@ C'est le "Tenant" principal. Chaque entrepreneur a sa propre organisation.
 
 - **id**, **organization_id**, **client_id**.
 - **quotation_id**: (Optionnel) Lien vers le devis d'origine si converti. [NOUVEAU]
-- **numero**: (Ex: FA-2024-001). Chronologie stricte à respecter.
+- **type**: (Facture, Avoir). Détermine s'il s'agit d'une facture standard ou d'un avoir (credit note). [NOUVEAU]
+- **numero**: (Ex: FA-2024-001 ou AV-2024-001). Chronologie stricte à respecter.
 - **date_emission**, **date_echeance**.
-- **statut**: (Brouillon, Editée, Payée, Annulée).
-- **mode_paiement**: (Virement, Chèque, Espèces, etc.).
+- **statut**: (Brouillon, Validée, Payée, Impayée). Le statut 'Annulée' est supprimé ; les corrections s'effectuent par Avoir. [MODIFIÉ]
 - **total_ht**, **total_tva**, **total_ttc**.
 
 ### 8. Lignes de Facture (Invoice Lines)
@@ -104,6 +107,14 @@ C'est le "Tenant" principal. Chaque entrepreneur a sa propre organisation.
 - **description**, **quantite**, **prix_unitaire_ht**.
 - **discount_amount**: Montant de la remise appliquée à cette ligne. [NOUVEAU]
 - **taux_tva_id**, **montant_tva**, **montant_ttc**.
+
+### 8b. Paiements (Payments) [NOUVEAU]
+
+- **id**, **organization_id**, **invoice_id**.
+- **montant**: Montant payé (stocké en centimes/décimal).
+- **date_paiement**: Date effective du paiement.
+- **mode_paiement**: (Virement, Chèque, Espèces, Effet).
+- **reference**: Optionnel (ex: numéro de chèque, référence de virement).
 
 ### 9. Configuration Comptable & Taxes
 

@@ -92,9 +92,9 @@ graph TD
 - [ ] **US 2.1 : CRM B2B / B2C** (En Parallèle)
   - _Backend:_ Endpoints GET/POST/PATCH Clients.
   - _Frontend:_ Intégration du template "gestion_des_clients".
-- [ ] **US 2.2 : Catalogue Produits & Taxes** (En Parallèle)
-  - _Backend:_ CRUD Produits et paramétrage des `TaxRate`.
-  - _Frontend:_ Intégration UI du catalogue.
+- [ ] **US 2.2 : Catalogue Produits & Taxes (Onboarding & PCM)** (En Parallèle)
+  - _Backend:_ CRUD Produits, paramétrage des `TaxRate` et association aux comptes du Plan Comptable Marocain (PCM).
+  - _Frontend:_ Intégration UI du catalogue avec assistant d'onboarding (adaptation automatique des biens/services aux comptes PCM).
 
 ## 🏃 Sprint 3 : Processus Avant-Vente (Devis)
 **Objectif :** Moteur intelligent de Devis, tables de remises et calcul des taxes.
@@ -113,8 +113,11 @@ graph TD
   - Utilisation de `prisma.$transaction` pour convertir un Devis en Facture de manière atomique (sans perte de données).
 - [ ] **US 4.2 : Sécurité de la Chronologie Légale** (Backend - **CRITIQUE**)
   - Utilisation de "Row-Level Locking" pour assurer que les identifiants (FA-2024-001) se suivent strictement sans trou.
-- [ ] **US 4.3 : UI Facturation & Paiements** (Frontend)
-  - Intégration du template "liste_des_factures" et "details_de_la_facture".
+- [ ] **US 4.3 : Gestion des Paiements & Règlements** (Full-Stack)
+  - _Backend:_ CRUD Paiements, gestion de l'historique des règlements, mise à jour dynamique du statut de l'invoice (Payée, Impayée) et validation des montants.
+  - _Frontend:_ Interface de saisie des règlements partiels/complets et historique de paiement.
+- [ ] **US 4.4 : UI Facturation & Avoirs** (Frontend)
+  - Intégration du template "liste_des_factures", "details_de_la_facture" et gestion de la création des Avoirs (Credit Notes) pour annulation/correction conforme.
 
 ## 🏃 Sprint 5 : Business Intelligence & Exports Compta
 **Objectif :** Chiffres clés et export conforme pour télédéclaration au Maroc.

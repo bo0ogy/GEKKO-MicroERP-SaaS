@@ -53,3 +53,21 @@ If the Node.js server crashes at Step 4, the transaction is never committed. The
 * The Invoice Header vanishes as if it never existed.
 * The sequence lock is released without incrementing.
 * The next user will correctly get FA-2024-001. No ghost data, no missing numbers in the accounting ledger.
+
+## 4. Payment & Settlement Logic (Partial & Complete)
+
+To support cash-basis VAT (*Régime des Encaissements*), payment transactions must be handled with the same transactional rigor:
+1. **Adding a Payment:** When a payment is recorded via `POST /api/v1/payments`, the `PaymentService` opens a transaction:
+   * It creates a `Payment` record.
+   * It calculates the total amount paid so far for the target `Invoice` (summing all associated `Payment` records).
+   * It updates the `Invoice.statut` to either `Payée` (if sum matches or exceeds `total_ttc`) or `Impayée` (if sum is less than `total_ttc` but greater than 0, representing a partial payment).
+2. **Precision:** All calculations use `decimal.js` or integers (cents) to avoid rounding discrepancies.
+
+## 5. Credit Note (Avoir) Integrity
+
+To correct or cancel a finalized invoice:
+1. **Creation:** The user requests an `Avoir` (Credit Note) via `POST /api/v1/invoices/:id/avoir`.
+2. **Validation:** The backend verifies that the original invoice status is `Validée` (not a draft) and has not already been fully refunded/offset by other Credit Notes.
+3. **Sequencing:** The Avoir receives a dedicated sequence code `AV-2024-XXX` (using the same row-level sequence locking strategy).
+4. **Linkage:** The credit note retains a link to the original invoice, allowing accountants to audit the offset transaction path easily.
+

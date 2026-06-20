@@ -11,3 +11,6 @@ US#9,🛡️ Sécurité (CNDP),"... TPE, je veux une case de consentement pour r
 US#10,🛡️ Sécurité,"... Système, je dois chiffrer les mots de passe dans la base de données.",Hamza / Devs,🔥 Critique
 US#11,🟡 Pilotage,"... TPE, je veux un Dashboard (CA mensuel, impayés) pour suivre mon activité.",Khadija (Besoins),🔵 Basse (Post-MVP)
 US#12,🟡 Pilotage,"... TPE, je veux saisir mes factures d'achat pour calculer ma marge.",Oumaima,🔵 Basse (Post-MVP)
+US#13,🟢 MVP (Facturation),"... TPE, je veux enregistrer et suivre les paiements reçus (règlements partiels ou totaux) pour gérer mon cash-flow.",Oumaima / Hamza,⚡ Haute
+US#14,🟢 MVP (Facturation),"... TPE, je veux générer des avoirs conformes pour annuler ou corriger des factures déjà validées.",Hamza / Soufian,⚡ Haute
+
